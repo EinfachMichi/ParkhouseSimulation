@@ -169,6 +169,32 @@ namespace ParkhouseSimulation.Frontend
       
       #endregion
 
+      #region Drive (In/Out)
+
+      private void DriveInButton_Click(object sender, EventArgs e)
+      {
+         int carCount = (int) driveInCarsNumericUpDown.Value;
+         int bikeCount = (int) driveInBikesNumericUpDown.Value;
+
+         for(int i = 0; i < carCount; i++)
+         {
+            if(!parkhouse.AddVehicle(VehicleType.Car))
+            {
+               //TODO: ERROR MESSAGE
+            }
+         }
+         
+         for(int i = 0; i < bikeCount; i++)
+         {
+            if(!parkhouse.AddVehicle(VehicleType.Bike))
+            {
+               //TODO: ERROR MESSAGE
+            }
+         }
+      }
+
+      #endregion
+      
       #region Extra Utilty
 
       public static string GetAlphabeticalCharacterAt(int index)

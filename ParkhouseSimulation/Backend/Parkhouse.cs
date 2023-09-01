@@ -28,8 +28,35 @@ namespace ParkhouseSimulation.Backend
          return removedFloor;
       }
 
+      private int uniqueVehicleID;
+      
+      public bool AddVehicle(VehicleType type)
+      {
+         Vehicle vehicle = new Vehicle(uniqueVehicleID.ToString(), type);
+         ParkingSlot slot = FindFreeSlotFor(vehicle);
+         if(slot != null)
+         {
+            slot.Vehicle = vehicle;
+            uniqueVehicleID++;
+            return true;
+         }
+         return false;
+      }
+
       public Floor GetFloor(int index) => floors[index];
       public int GetCarSlotCount(Floor floor) => floor.CarSlots.Length;
       public int GetBikeSlotCount(Floor floor) => floor.BikeSlots.Length;
+
+      private ParkingSlot FindFreeSlotFor(Vehicle vehicle)
+      {
+         foreach(Floor floor in floors)
+         {
+            if(floor.FindFreeParkingSlotFor(vehicle, out ParkingSlot slot))
+            {
+               return slot;
+            }
+         }
+         return null;
+      }
    }
 }

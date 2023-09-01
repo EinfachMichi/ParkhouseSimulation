@@ -50,6 +50,7 @@
         <Compile Include="Backend\Parkhouse.cs" />
         <Compile Include="Backend\ParkingSlot.cs" />
         <Compile Include="Backend\Program.cs" />
+        <Compile Include="Backend\Vehicle.cs" />
         <Compile Include="Backend\VehicleType.cs" />
         <Compile Include="Frontend\FloorPanel.cs" />
         <Compile Include="Frontend\MainForm.cs">

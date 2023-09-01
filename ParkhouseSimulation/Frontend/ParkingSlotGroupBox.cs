@@ -19,6 +19,7 @@ namespace ParkhouseSimulation.Frontend
          parkingSlot = slot;
 
          slot.OnRename += Rename;
+         slot.OnVehicleChanged += SlotOnOnVehicleChanged;
          
          panel = new Panel();
          vehicleTypeLabel = new Label();
@@ -73,7 +74,22 @@ namespace ParkhouseSimulation.Frontend
       ~ParkingSlotGroupBox()
       {
          parkingSlot.OnRename -= Rename;
+         parkingSlot.OnVehicleChanged -= SlotOnOnVehicleChanged;
       } 
+      
+      private void SlotOnOnVehicleChanged(Vehicle vehicle)
+      {
+         if(vehicle != null)
+         {
+            carIdDisplayLabel.Text = vehicle.ID;
+            BackColor = Color.FromArgb(192, 0 ,0);
+         }
+         else
+         {
+            carIdDisplayLabel.Text = "NONE";
+            BackColor = Color.FromArgb(0, 192 ,0);
+         }
+      }
       
       public void Rename(string id)
       {

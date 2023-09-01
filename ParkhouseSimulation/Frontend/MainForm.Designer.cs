@@ -50,6 +50,19 @@
          this.floorRemovePageButton = new System.Windows.Forms.Button();
          this.floorRemovePageComboBox = new System.Windows.Forms.ComboBox();
          this.floorDisplayPanel = new System.Windows.Forms.Panel();
+         this.driveInOutTabControl = new System.Windows.Forms.TabControl();
+         this.driveInPage = new System.Windows.Forms.TabPage();
+         this.driveInButton = new System.Windows.Forms.Button();
+         this.driveInBikesNumericUpDown = new System.Windows.Forms.NumericUpDown();
+         this.driveInCarsNumericUpDown = new System.Windows.Forms.NumericUpDown();
+         this.driveInBikesLabel = new System.Windows.Forms.Label();
+         this.driveInCarsLabel = new System.Windows.Forms.Label();
+         this.driveOutPage = new System.Windows.Forms.TabPage();
+         this.driveOutButton = new System.Windows.Forms.Button();
+         this.driveOutBikesNumericUpDown = new System.Windows.Forms.NumericUpDown();
+         this.driveOutCarsNumericUpDown = new System.Windows.Forms.NumericUpDown();
+         this.driveOutBikesLabel = new System.Windows.Forms.Label();
+         this.driveOutCarsLabel = new System.Windows.Forms.Label();
          this.floorCreationTabControl.SuspendLayout();
          this.createParkhousePage.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.floorCreatePageBikesNumericUpDown)).BeginInit();
@@ -58,6 +71,13 @@
          ((System.ComponentModel.ISupportInitialize)(this.floorEditPageBikesNumericUpDown)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.floorEditPageCarsNumericUpDown)).BeginInit();
          this.floorRemovePage.SuspendLayout();
+         this.driveInOutTabControl.SuspendLayout();
+         this.driveInPage.SuspendLayout();
+         ((System.ComponentModel.ISupportInitialize)(this.driveInBikesNumericUpDown)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.driveInCarsNumericUpDown)).BeginInit();
+         this.driveOutPage.SuspendLayout();
+         ((System.ComponentModel.ISupportInitialize)(this.driveOutBikesNumericUpDown)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.driveOutCarsNumericUpDown)).BeginInit();
          this.SuspendLayout();
          // 
          // floorSelectionComboBox
@@ -106,7 +126,7 @@
          this.floorCreatePageNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.floorCreatePageNameLabel.Location = new System.Drawing.Point(10, 13);
          this.floorCreatePageNameLabel.Name = "floorCreatePageNameLabel";
-         this.floorCreatePageNameLabel.Size = new System.Drawing.Size(48, 16);
+         this.floorCreatePageNameLabel.Size = new System.Drawing.Size(0, 16);
          this.floorCreatePageNameLabel.TabIndex = 7;
          this.floorCreatePageNameLabel.Text = "Name:";
          // 
@@ -151,7 +171,7 @@
          this.floorCreatePageBikeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.floorCreatePageBikeLabel.Location = new System.Drawing.Point(10, 67);
          this.floorCreatePageBikeLabel.Name = "floorCreatePageBikeLabel";
-         this.floorCreatePageBikeLabel.Size = new System.Drawing.Size(45, 16);
+         this.floorCreatePageBikeLabel.Size = new System.Drawing.Size(0, 16);
          this.floorCreatePageBikeLabel.TabIndex = 1;
          this.floorCreatePageBikeLabel.Text = "Bikes:";
          // 
@@ -161,7 +181,7 @@
          this.floorCreatePageCarsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.floorCreatePageCarsLabel.Location = new System.Drawing.Point(10, 40);
          this.floorCreatePageCarsLabel.Name = "floorCreatePageCarsLabel";
-         this.floorCreatePageCarsLabel.Size = new System.Drawing.Size(39, 16);
+         this.floorCreatePageCarsLabel.Size = new System.Drawing.Size(0, 16);
          this.floorCreatePageCarsLabel.TabIndex = 0;
          this.floorCreatePageCarsLabel.Text = "Cars:";
          // 
@@ -214,7 +234,7 @@
          this.floorEditPageBikesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.floorEditPageBikesLabel.Location = new System.Drawing.Point(10, 67);
          this.floorEditPageBikesLabel.Name = "floorEditPageBikesLabel";
-         this.floorEditPageBikesLabel.Size = new System.Drawing.Size(45, 16);
+         this.floorEditPageBikesLabel.Size = new System.Drawing.Size(0, 16);
          this.floorEditPageBikesLabel.TabIndex = 5;
          this.floorEditPageBikesLabel.Text = "Bikes:";
          // 
@@ -224,7 +244,7 @@
          this.floorEditPageCarsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.floorEditPageCarsLabel.Location = new System.Drawing.Point(10, 40);
          this.floorEditPageCarsLabel.Name = "floorEditPageCarsLabel";
-         this.floorEditPageCarsLabel.Size = new System.Drawing.Size(39, 16);
+         this.floorEditPageCarsLabel.Size = new System.Drawing.Size(0, 16);
          this.floorEditPageCarsLabel.TabIndex = 4;
          this.floorEditPageCarsLabel.Text = "Cars:";
          // 
@@ -282,11 +302,145 @@
          this.floorDisplayPanel.Size = new System.Drawing.Size(547, 498);
          this.floorDisplayPanel.TabIndex = 4;
          // 
+         // driveInOutTabControl
+         // 
+         this.driveInOutTabControl.Controls.Add(this.driveInPage);
+         this.driveInOutTabControl.Controls.Add(this.driveOutPage);
+         this.driveInOutTabControl.Location = new System.Drawing.Point(12, 161);
+         this.driveInOutTabControl.Name = "driveInOutTabControl";
+         this.driveInOutTabControl.SelectedIndex = 0;
+         this.driveInOutTabControl.Size = new System.Drawing.Size(197, 116);
+         this.driveInOutTabControl.TabIndex = 5;
+         // 
+         // driveInPage
+         // 
+         this.driveInPage.BackColor = System.Drawing.Color.PaleGreen;
+         this.driveInPage.Controls.Add(this.driveInButton);
+         this.driveInPage.Controls.Add(this.driveInBikesNumericUpDown);
+         this.driveInPage.Controls.Add(this.driveInCarsNumericUpDown);
+         this.driveInPage.Controls.Add(this.driveInBikesLabel);
+         this.driveInPage.Controls.Add(this.driveInCarsLabel);
+         this.driveInPage.Location = new System.Drawing.Point(4, 22);
+         this.driveInPage.Name = "driveInPage";
+         this.driveInPage.Padding = new System.Windows.Forms.Padding(3);
+         this.driveInPage.Size = new System.Drawing.Size(189, 90);
+         this.driveInPage.TabIndex = 0;
+         this.driveInPage.Text = "Drive in";
+         // 
+         // driveInButton
+         // 
+         this.driveInButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+         this.driveInButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.driveInButton.Location = new System.Drawing.Point(3, 64);
+         this.driveInButton.Name = "driveInButton";
+         this.driveInButton.Size = new System.Drawing.Size(183, 23);
+         this.driveInButton.TabIndex = 9;
+         this.driveInButton.Text = "Enter parkhouse";
+         this.driveInButton.UseVisualStyleBackColor = true;
+         this.driveInButton.Click += new System.EventHandler(this.DriveInButton_Click);
+         // 
+         // driveInBikesNumericUpDown
+         // 
+         this.driveInBikesNumericUpDown.Location = new System.Drawing.Point(59, 36);
+         this.driveInBikesNumericUpDown.Name = "driveInBikesNumericUpDown";
+         this.driveInBikesNumericUpDown.Size = new System.Drawing.Size(122, 20);
+         this.driveInBikesNumericUpDown.TabIndex = 8;
+         // 
+         // driveInCarsNumericUpDown
+         // 
+         this.driveInCarsNumericUpDown.Location = new System.Drawing.Point(59, 9);
+         this.driveInCarsNumericUpDown.Maximum = new decimal(new int[] {200, 0, 0, 0});
+         this.driveInCarsNumericUpDown.Name = "driveInCarsNumericUpDown";
+         this.driveInCarsNumericUpDown.Size = new System.Drawing.Size(122, 20);
+         this.driveInCarsNumericUpDown.TabIndex = 7;
+         // 
+         // driveInBikesLabel
+         // 
+         this.driveInBikesLabel.AutoSize = true;
+         this.driveInBikesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.driveInBikesLabel.Location = new System.Drawing.Point(8, 39);
+         this.driveInBikesLabel.Name = "driveInBikesLabel";
+         this.driveInBikesLabel.Size = new System.Drawing.Size(0, 16);
+         this.driveInBikesLabel.TabIndex = 6;
+         this.driveInBikesLabel.Text = "Bikes:";
+         // 
+         // driveInCarsLabel
+         // 
+         this.driveInCarsLabel.AutoSize = true;
+         this.driveInCarsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.driveInCarsLabel.Location = new System.Drawing.Point(8, 12);
+         this.driveInCarsLabel.Name = "driveInCarsLabel";
+         this.driveInCarsLabel.Size = new System.Drawing.Size(0, 16);
+         this.driveInCarsLabel.TabIndex = 5;
+         this.driveInCarsLabel.Text = "Cars:";
+         // 
+         // driveOutPage
+         // 
+         this.driveOutPage.BackColor = System.Drawing.Color.LightPink;
+         this.driveOutPage.Controls.Add(this.driveOutButton);
+         this.driveOutPage.Controls.Add(this.driveOutBikesNumericUpDown);
+         this.driveOutPage.Controls.Add(this.driveOutCarsNumericUpDown);
+         this.driveOutPage.Controls.Add(this.driveOutBikesLabel);
+         this.driveOutPage.Controls.Add(this.driveOutCarsLabel);
+         this.driveOutPage.Location = new System.Drawing.Point(4, 22);
+         this.driveOutPage.Name = "driveOutPage";
+         this.driveOutPage.Padding = new System.Windows.Forms.Padding(3);
+         this.driveOutPage.Size = new System.Drawing.Size(189, 90);
+         this.driveOutPage.TabIndex = 1;
+         this.driveOutPage.Text = "Drive out";
+         // 
+         // driveOutButton
+         // 
+         this.driveOutButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+         this.driveOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.driveOutButton.Location = new System.Drawing.Point(3, 64);
+         this.driveOutButton.Name = "driveOutButton";
+         this.driveOutButton.Size = new System.Drawing.Size(183, 23);
+         this.driveOutButton.TabIndex = 14;
+         this.driveOutButton.Text = "Exit parkhouse";
+         this.driveOutButton.UseVisualStyleBackColor = true;
+         // 
+         // driveOutBikesNumericUpDown
+         // 
+         this.driveOutBikesNumericUpDown.Location = new System.Drawing.Point(59, 36);
+         this.driveOutBikesNumericUpDown.Name = "driveOutBikesNumericUpDown";
+         this.driveOutBikesNumericUpDown.Size = new System.Drawing.Size(122, 20);
+         this.driveOutBikesNumericUpDown.TabIndex = 13;
+         // 
+         // driveOutCarsNumericUpDown
+         // 
+         this.driveOutCarsNumericUpDown.Location = new System.Drawing.Point(59, 9);
+         this.driveOutCarsNumericUpDown.Maximum = new decimal(new int[] {200, 0, 0, 0});
+         this.driveOutCarsNumericUpDown.Name = "driveOutCarsNumericUpDown";
+         this.driveOutCarsNumericUpDown.Size = new System.Drawing.Size(122, 20);
+         this.driveOutCarsNumericUpDown.TabIndex = 12;
+         // 
+         // driveOutBikesLabel
+         // 
+         this.driveOutBikesLabel.AutoSize = true;
+         this.driveOutBikesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.driveOutBikesLabel.Location = new System.Drawing.Point(8, 39);
+         this.driveOutBikesLabel.Name = "driveOutBikesLabel";
+         this.driveOutBikesLabel.Size = new System.Drawing.Size(0, 16);
+         this.driveOutBikesLabel.TabIndex = 11;
+         this.driveOutBikesLabel.Text = "Bikes:";
+         // 
+         // driveOutCarsLabel
+         // 
+         this.driveOutCarsLabel.AutoSize = true;
+         this.driveOutCarsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.driveOutCarsLabel.Location = new System.Drawing.Point(8, 12);
+         this.driveOutCarsLabel.Name = "driveOutCarsLabel";
+         this.driveOutCarsLabel.Size = new System.Drawing.Size(0, 16);
+         this.driveOutCarsLabel.TabIndex = 10;
+         this.driveOutCarsLabel.Text = "Cars:";
+         // 
          // MainForm
          // 
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
          this.BackColor = System.Drawing.Color.Gray;
          this.ClientSize = new System.Drawing.Size(774, 561);
+         this.Controls.Add(this.driveInOutTabControl);
          this.Controls.Add(this.floorDisplayPanel);
          this.Controls.Add(this.floorCreationTabControl);
          this.Controls.Add(this.floorSelectionComboBox);
@@ -306,8 +460,32 @@
          ((System.ComponentModel.ISupportInitialize)(this.floorEditPageBikesNumericUpDown)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.floorEditPageCarsNumericUpDown)).EndInit();
          this.floorRemovePage.ResumeLayout(false);
+         this.driveInOutTabControl.ResumeLayout(false);
+         this.driveInPage.ResumeLayout(false);
+         this.driveInPage.PerformLayout();
+         ((System.ComponentModel.ISupportInitialize)(this.driveInBikesNumericUpDown)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.driveInCarsNumericUpDown)).EndInit();
+         this.driveOutPage.ResumeLayout(false);
+         this.driveOutPage.PerformLayout();
+         ((System.ComponentModel.ISupportInitialize)(this.driveOutBikesNumericUpDown)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.driveOutCarsNumericUpDown)).EndInit();
          this.ResumeLayout(false);
       }
+
+      private System.Windows.Forms.Button driveInButton;
+      private System.Windows.Forms.NumericUpDown driveInBikesNumericUpDown;
+      private System.Windows.Forms.NumericUpDown driveInCarsNumericUpDown;
+      private System.Windows.Forms.Label driveInBikesLabel;
+      private System.Windows.Forms.Label driveInCarsLabel;
+      private System.Windows.Forms.Button driveOutButton;
+      private System.Windows.Forms.NumericUpDown driveOutBikesNumericUpDown;
+      private System.Windows.Forms.NumericUpDown driveOutCarsNumericUpDown;
+      private System.Windows.Forms.Label driveOutBikesLabel;
+      private System.Windows.Forms.Label driveOutCarsLabel;
+
+      private System.Windows.Forms.TabControl driveInOutTabControl;
+      private System.Windows.Forms.TabPage driveInPage;
+      private System.Windows.Forms.TabPage driveOutPage;
 
       private System.Windows.Forms.Panel floorDisplayPanel;
 
