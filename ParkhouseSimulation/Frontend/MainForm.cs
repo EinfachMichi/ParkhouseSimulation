@@ -16,7 +16,7 @@ namespace ParkhouseSimulation.Frontend
          RefreshFloorCreatePage();
       }
 
-      #region Events
+      #region Floor (Create/Edit/Remove)
 
       private void CreateFloorButton_Click(object sender, EventArgs e)
       {
@@ -113,9 +113,9 @@ namespace ParkhouseSimulation.Frontend
          UpdateFloorComboBox(removeIndex + temp, floorSelectionComboBox);
          RefreshFloorRemovePage(removeIndex + temp);
       }
-      
-      #endregion
 
+      //----------------------------------------------------------------------------------------------------------------
+      
       private void RefreshFloorCreatePage()
       {
          floorCreatePageNameTextBox.Text = $"Floor {GetAlphabeticalCharacterAt(parkhouse.Floors)}";
@@ -145,13 +145,8 @@ namespace ParkhouseSimulation.Frontend
          HideAllFloorPanelsExceptFor(index);
       }
       
-      #region Utilty
-
-      public static string GetAlphabeticalCharacterAt(int index)
-      {
-         return ((char) ('A' + index)).ToString();
-      }
-
+      //----------------------------------------------------------------------------------------------------------------
+      
       private void HideAllFloorPanelsExceptFor(int excludingIndex)
       {
          foreach(FloorPanel floorPanel in floorPanels) floorPanel.Visible = false;
@@ -170,6 +165,15 @@ namespace ParkhouseSimulation.Frontend
       {
          UpdateFloorComboBox(comboBox);
          comboBox.SelectedIndex = newIndex;
+      }
+      
+      #endregion
+
+      #region Extra Utilty
+
+      public static string GetAlphabeticalCharacterAt(int index)
+      {
+         return ((char) ('A' + index)).ToString();
       }
 
       #endregion
