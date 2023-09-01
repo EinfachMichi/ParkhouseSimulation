@@ -14,7 +14,6 @@ namespace ParkhouseSimulation.Frontend
       {
          InitializeComponent();
          RefreshFloorCreatePage();
-         RefreshFloorEditPage();
       }
 
       #region Events
@@ -25,10 +24,10 @@ namespace ParkhouseSimulation.Frontend
          int bikeCount = (int) floorCreatePageBikesNumericUpDown.Value;
          Floor newFloor = parkhouse.AddFloor(carCount, bikeCount);
          
-         HideFloorPanels();
          FloorPanel newFloorPanel = new FloorPanel(newFloor);
          floorPanels.Add(newFloorPanel);
          floorDisplayPanel.Controls.Add(newFloorPanel);
+         HideFloorPanels(floorPanels.Count - 1);
 
          RefreshFloorCreatePage();
          UpdateComboBox(floorSelectionComboBox);
@@ -43,24 +42,23 @@ namespace ParkhouseSimulation.Frontend
                RefreshFloorCreatePage();
                break;
             case 1:
-               RefreshFloorEditPage();
+               RefreshFloorEditPage(floorSelectionComboBox.SelectedIndex);
                break;
          }
       }
-
+      
+      private void FloorEditPageComboBox_DropDownClosed(object sender, EventArgs e)
+      {
+         int floorIndex = floorEditPageComboBox.SelectedIndex;
+         RefreshFloorEditPage(floorIndex);
+         UpdateComboBox(floorIndex, floorSelectionComboBox);
+      }
+      
       private void FloorSelectionComboBox_SelectedIndexChanged(object sender, EventArgs e)
       {
-         int floorIndex = floorSelectionComboBox.SelectedIndex;
-         HideFloorPanels();
-         floorPanels[floorIndex].Visible = true;
-      }
-
-      private void FloorEditPageButton_Click(object sender, EventArgs e)
-      {
-         int floor = floorEditPageComboBox.SelectedIndex;
-         int carCount = (int) floorEditPageCarsNumericUpDown.Value;
-         int bikeCount = (int) floorEditPageBikesNumericUpDown.Value;
-         parkhouse.EditFloor(floor, carCount, bikeCount);
+         int selectedIndex = floorSelectionComboBox.SelectedIndex;
+         HideFloorPanels(selectedIndex);
+         RefreshFloorEditPage(selectedIndex);
       }
       
       #endregion
@@ -72,15 +70,17 @@ namespace ParkhouseSimulation.Frontend
          floorCreatePageBikesNumericUpDown.Value = 0;
       }
 
-      private void RefreshFloorEditPage()
+      private void RefreshFloorEditPage(int floorIndex)
       {
-         UpdateComboBox(floorEditPageComboBox);
-         floorEditPageComboBox.SelectedIndex = floorSelectionComboBox.SelectedIndex;
+         UpdateComboBox(floorIndex, floorEditPageComboBox);
          
-         floorCreatePageCarsNumericUpDown.Value = 0;
-         floorCreatePageBikesNumericUpDown.Value = 0;
+         if (parkhouse.Floors == 0) return;
+         
+         Floor currentFloor = parkhouse.GetFloor(floorIndex);
+         floorEditPageCarsNumericUpDown.Value = parkhouse.GetCarSlotCount(currentFloor);
+         floorEditPageBikesNumericUpDown.Value = parkhouse.GetBikeSlotCount(currentFloor);
       }
-
+      
       #region Utilty
 
       public static string GetAlphabeticalCharacterAt(int index)
@@ -88,9 +88,10 @@ namespace ParkhouseSimulation.Frontend
          return ((char) ('A' + index)).ToString();
       }
 
-      private void HideFloorPanels()
+      private void HideFloorPanels(int excludingIndex)
       {
          foreach(FloorPanel floorPanel in floorPanels) floorPanel.Visible = false;
+         floorPanels[excludingIndex].Visible = true;
       }
 
       private void UpdateComboBox(ComboBox comboBox)
@@ -100,7 +101,13 @@ namespace ParkhouseSimulation.Frontend
             data[i] = $"Floor {GetAlphabeticalCharacterAt(i)}";
          comboBox.DataSource = data;
       }
-      
+
+      private void UpdateComboBox(int newIndex, ComboBox comboBox)
+      {
+         UpdateComboBox(comboBox);
+         comboBox.SelectedIndex = newIndex;
+      }
+
       #endregion
    }
 }

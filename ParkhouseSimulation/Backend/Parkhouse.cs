@@ -16,16 +16,8 @@ namespace ParkhouseSimulation.Backend
          return floor;
       }
 
-      private void AddFloorAt(int index, int carCount, int bikeCount)
-      {
-         Floor floor = new Floor(carCount, bikeCount, MainForm.GetAlphabeticalCharacterAt(Floors));
-         floors.Insert(index, floor);
-      }
-      
-      public void EditFloor(int index, int carCount, int bikeCount)
-      {
-         floors.RemoveAt(index);
-         AddFloorAt(index, carCount, bikeCount);
-      }
+      public Floor GetFloor(int index) => floors[index];
+      public int GetCarSlotCount(Floor floor) => floor.CarSlots.Length;
+      public int GetBikeSlotCount(Floor floor) => floor.BikeSlots.Length;
    }
 }

@@ -106,7 +106,7 @@
          this.floorCreatePageNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.floorCreatePageNameLabel.Location = new System.Drawing.Point(10, 13);
          this.floorCreatePageNameLabel.Name = "floorCreatePageNameLabel";
-         this.floorCreatePageNameLabel.Size = new System.Drawing.Size(0, 16);
+         this.floorCreatePageNameLabel.Size = new System.Drawing.Size(48, 16);
          this.floorCreatePageNameLabel.TabIndex = 7;
          this.floorCreatePageNameLabel.Text = "Name:";
          // 
@@ -140,7 +140,7 @@
          // floorCreatePageCarsNumericUpDown
          // 
          this.floorCreatePageCarsNumericUpDown.Location = new System.Drawing.Point(61, 37);
-         this.floorCreatePageCarsNumericUpDown.Maximum = new decimal(new int[] {200, 0, 0, 0});
+         this.floorCreatePageCarsNumericUpDown.Maximum = new decimal(new int[] { 200, 0, 0, 0 });
          this.floorCreatePageCarsNumericUpDown.Name = "floorCreatePageCarsNumericUpDown";
          this.floorCreatePageCarsNumericUpDown.Size = new System.Drawing.Size(122, 20);
          this.floorCreatePageCarsNumericUpDown.TabIndex = 2;
@@ -191,7 +191,6 @@
          this.floorEditPageButton.TabIndex = 8;
          this.floorEditPageButton.Text = "Edit floor";
          this.floorEditPageButton.UseVisualStyleBackColor = true;
-         this.floorEditPageButton.Click += new System.EventHandler(this.FloorEditPageButton_Click);
          // 
          // floorEditPageBikesNumericUpDown
          // 
@@ -203,7 +202,7 @@
          // floorEditPageCarsNumericUpDown
          // 
          this.floorEditPageCarsNumericUpDown.Location = new System.Drawing.Point(61, 37);
-         this.floorEditPageCarsNumericUpDown.Maximum = new decimal(new int[] {200, 0, 0, 0});
+         this.floorEditPageCarsNumericUpDown.Maximum = new decimal(new int[] { 200, 0, 0, 0 });
          this.floorEditPageCarsNumericUpDown.Name = "floorEditPageCarsNumericUpDown";
          this.floorEditPageCarsNumericUpDown.Size = new System.Drawing.Size(122, 20);
          this.floorEditPageCarsNumericUpDown.TabIndex = 6;
@@ -237,6 +236,7 @@
          this.floorEditPageComboBox.Name = "floorEditPageComboBox";
          this.floorEditPageComboBox.Size = new System.Drawing.Size(118, 21);
          this.floorEditPageComboBox.TabIndex = 0;
+         this.floorEditPageComboBox.DropDownClosed += new System.EventHandler(this.FloorEditPageComboBox_DropDownClosed);
          // 
          // floorRemovePage
          // 
@@ -282,7 +282,7 @@
          // MainForm
          // 
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-         this.BackColor = System.Drawing.SystemColors.Desktop;
+         this.BackColor = System.Drawing.Color.MediumPurple;
          this.ClientSize = new System.Drawing.Size(756, 561);
          this.Controls.Add(this.floorDisplayPanel);
          this.Controls.Add(this.floorCreationTabControl);
