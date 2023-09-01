@@ -14,26 +14,10 @@ namespace ParkhouseSimulation.Frontend
       {
          InitializeComponent();
          RefreshFloorCreatePage();
+         RefreshDriveInPage();
       }
 
       #region Floor (Create/Edit/Remove)
-
-      private void CreateFloorButton_Click(object sender, EventArgs e)
-      {
-         int carCount = (int) floorCreatePageCarsNumericUpDown.Value;
-         int bikeCount = (int) floorCreatePageBikesNumericUpDown.Value;
-         
-         Floor newFloor = parkhouse.AddFloor(carCount, bikeCount);
-         
-         FloorPanel newFloorPanel = new FloorPanel(newFloor);
-         floorPanels.Add(newFloorPanel);
-         floorDisplayPanel.Controls.Add(newFloorPanel);
-         HideAllFloorPanelsExceptFor(floorPanels.Count - 1);
-
-         RefreshFloorCreatePage();
-         UpdateFloorComboBox(floorSelectionComboBox);
-         floorSelectionComboBox.SelectedIndex = parkhouse.Floors - 1;
-      }
 
       private void FloorCreationTabControl_SelectedIndexChanged(object sender, EventArgs e)
       {
@@ -51,6 +35,25 @@ namespace ParkhouseSimulation.Frontend
          }
       }
       
+      private void CreateFloorButton_Click(object sender, EventArgs e)
+      {
+         int carCount = (int) floorCreatePageCarsNumericUpDown.Value;
+         int bikeCount = (int) floorCreatePageBikesNumericUpDown.Value;
+         
+         Floor newFloor = parkhouse.AddFloor(carCount, bikeCount);
+         
+         FloorPanel newFloorPanel = new FloorPanel(newFloor);
+         floorPanels.Add(newFloorPanel);
+         floorDisplayPanel.Controls.Add(newFloorPanel);
+         HideAllFloorPanelsExceptFor(floorPanels.Count - 1);
+
+         RefreshFloorCreatePage();
+         UpdateFloorComboBox(floorSelectionComboBox);
+         floorSelectionComboBox.SelectedIndex = parkhouse.Floors - 1;
+         
+         RefreshDriveInPage();
+      }
+
       private void FloorEditPageComboBox_DropDownClosed(object sender, EventArgs e)
       {
          int selectedIndex = floorEditPageComboBox.SelectedIndex;
@@ -139,7 +142,7 @@ namespace ParkhouseSimulation.Frontend
       private void RefreshFloorEditPage(int floorIndex)
       {
          UpdateFloorComboBox(floorIndex, floorEditPageComboBox);
-         
+         floorEditPageButton.Enabled = parkhouse.Floors > 0;
          if (parkhouse.Floors == 0) return;
          
          Floor currentFloor = parkhouse.GetFloor(floorIndex);
@@ -184,6 +187,16 @@ namespace ParkhouseSimulation.Frontend
 
       #region Drive (In/Out)
 
+      private void DriveInOutTabControl_SelectedIndexChanged(object sender, EventArgs e)
+      {
+         switch(driveInOutTabControl.SelectedIndex)
+         {
+            case 0:
+               RefreshDriveInPage();
+               break;
+         }
+      }
+      
       private void DriveInButton_Click(object sender, EventArgs e)
       {
          int carCount = (int) driveInCarsNumericUpDown.Value;
@@ -193,7 +206,6 @@ namespace ParkhouseSimulation.Frontend
          {
             if(!parkhouse.AddVehicle(VehicleType.Car))
             {
-               //TODO: ERROR MESSAGE
             }
          }
          
@@ -201,9 +213,43 @@ namespace ParkhouseSimulation.Frontend
          {
             if(!parkhouse.AddVehicle(VehicleType.Bike))
             {
-               //TODO: ERROR MESSAGE
             }
          }
+         
+         RefreshDriveInPage();
+      }
+      
+      private void DriveInCarsNumericUpDown_Leave(object sender, EventArgs e)
+      {
+         RefreshDriveInPage();
+      }
+      
+      private void DriveInBikesNumericUpDown_Leave(object sender, EventArgs e)
+      {
+         RefreshDriveInPage();
+      }
+
+      //----------------------------------------------------------------------------------------------------------------
+
+      private void RefreshDriveInPage()
+      {
+         int maxPossibleCars = parkhouse.FreeParkingSlotCountForCars();
+         int inputNumberCars = (int) driveInCarsNumericUpDown.Value;
+
+         if(inputNumberCars > maxPossibleCars)
+         {
+            driveInCarsNumericUpDown.Value = maxPossibleCars;
+         }
+         
+         int maxPossibleBikes = parkhouse.FreeParkingSlotCountForBikes();
+         int inputNumberBikes = (int) driveInBikesNumericUpDown.Value;
+
+         if(inputNumberBikes > maxPossibleBikes)
+         {
+            driveInBikesNumericUpDown.Value = maxPossibleBikes;
+         }
+
+         driveInButton.Enabled = parkhouse.Floors > 0;
       }
 
       #endregion

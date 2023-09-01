@@ -311,6 +311,7 @@
          this.driveInOutTabControl.SelectedIndex = 0;
          this.driveInOutTabControl.Size = new System.Drawing.Size(197, 116);
          this.driveInOutTabControl.TabIndex = 5;
+         this.driveInOutTabControl.SelectedIndexChanged += new System.EventHandler(this.DriveInOutTabControl_SelectedIndexChanged);
          // 
          // driveInPage
          // 
@@ -345,6 +346,7 @@
          this.driveInBikesNumericUpDown.Name = "driveInBikesNumericUpDown";
          this.driveInBikesNumericUpDown.Size = new System.Drawing.Size(122, 20);
          this.driveInBikesNumericUpDown.TabIndex = 8;
+         this.driveInBikesNumericUpDown.Leave += new System.EventHandler(this.DriveInBikesNumericUpDown_Leave);
          // 
          // driveInCarsNumericUpDown
          // 
@@ -353,6 +355,7 @@
          this.driveInCarsNumericUpDown.Name = "driveInCarsNumericUpDown";
          this.driveInCarsNumericUpDown.Size = new System.Drawing.Size(122, 20);
          this.driveInCarsNumericUpDown.TabIndex = 7;
+         this.driveInCarsNumericUpDown.Leave += new System.EventHandler(this.DriveInCarsNumericUpDown_Leave);
          // 
          // driveInBikesLabel
          // 

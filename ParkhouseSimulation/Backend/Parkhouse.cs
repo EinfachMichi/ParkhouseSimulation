@@ -43,6 +43,26 @@ namespace ParkhouseSimulation.Backend
          return false;
       }
 
+      public int FreeParkingSlotCountForCars()
+      {
+         int count = 0;
+         foreach(Floor floor in floors)
+         {
+            count += floor.FreeParkingSlotCountForCars();
+         }
+         return count;
+      }
+      
+      public int FreeParkingSlotCountForBikes()
+      {
+         int count = 0;
+         foreach(Floor floor in floors)
+         {
+            count += floor.FreeParkingSlotCountForBikes();
+         }
+         return count;
+      }
+      
       public Floor GetFloor(int index) => floors[index];
       public int GetCarSlotCount(Floor floor) => floor.CarSlots.Length;
       public int GetBikeSlotCount(Floor floor) => floor.BikeSlots.Length;

@@ -57,6 +57,26 @@ namespace ParkhouseSimulation.Backend
          return count;
       }
 
+      public int FreeParkingSlotCountForCars()
+      {
+         int count = 0;
+         foreach(ParkingSlot slot in carSlots)
+         {
+            if(slot.Free) count++;
+         }
+         return count;
+      }
+      
+      public int FreeParkingSlotCountForBikes()
+      {
+         int count = 0;
+         foreach(ParkingSlot slot in bikeSlots)
+         {
+            if(slot.Free) count++;
+         }
+         return count;
+      }
+
       public bool FindFreeParkingSlotFor(Vehicle vehicle, out ParkingSlot slot)
       {
          foreach(ParkingSlot parkingSlot in slots)
