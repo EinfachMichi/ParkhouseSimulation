@@ -68,6 +68,19 @@ namespace ParkhouseSimulation.Frontend
       
       private void FloorEditPageButton_Click(object sender, EventArgs e)
       {
+         Floor floor = parkhouse.GetFloor(floorEditPageComboBox.SelectedIndex);
+         if(floor.FreeParkingSlotCount() < floor.SlotCount)
+         {
+            DialogResult result = MessageBox.Show(
+                        "When you edit this floor all parked cars will exit this parkhouse.",
+                        "Are you sure?",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning
+            );
+
+            if(result != DialogResult.Yes) return;
+         }
+         
          int selectedIndex = floorEditPageComboBox.SelectedIndex;
          int carCount = (int)floorEditPageCarsNumericUpDown.Value;
          int bikeCount = (int)floorEditPageBikesNumericUpDown.Value;

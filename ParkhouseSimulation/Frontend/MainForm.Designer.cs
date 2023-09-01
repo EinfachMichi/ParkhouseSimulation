@@ -126,7 +126,7 @@
          this.floorCreatePageNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.floorCreatePageNameLabel.Location = new System.Drawing.Point(10, 13);
          this.floorCreatePageNameLabel.Name = "floorCreatePageNameLabel";
-         this.floorCreatePageNameLabel.Size = new System.Drawing.Size(0, 16);
+         this.floorCreatePageNameLabel.Size = new System.Drawing.Size(48, 16);
          this.floorCreatePageNameLabel.TabIndex = 7;
          this.floorCreatePageNameLabel.Text = "Name:";
          // 
@@ -171,7 +171,7 @@
          this.floorCreatePageBikeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.floorCreatePageBikeLabel.Location = new System.Drawing.Point(10, 67);
          this.floorCreatePageBikeLabel.Name = "floorCreatePageBikeLabel";
-         this.floorCreatePageBikeLabel.Size = new System.Drawing.Size(0, 16);
+         this.floorCreatePageBikeLabel.Size = new System.Drawing.Size(45, 16);
          this.floorCreatePageBikeLabel.TabIndex = 1;
          this.floorCreatePageBikeLabel.Text = "Bikes:";
          // 
@@ -181,7 +181,7 @@
          this.floorCreatePageCarsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.floorCreatePageCarsLabel.Location = new System.Drawing.Point(10, 40);
          this.floorCreatePageCarsLabel.Name = "floorCreatePageCarsLabel";
-         this.floorCreatePageCarsLabel.Size = new System.Drawing.Size(0, 16);
+         this.floorCreatePageCarsLabel.Size = new System.Drawing.Size(39, 16);
          this.floorCreatePageCarsLabel.TabIndex = 0;
          this.floorCreatePageCarsLabel.Text = "Cars:";
          // 
@@ -234,7 +234,7 @@
          this.floorEditPageBikesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.floorEditPageBikesLabel.Location = new System.Drawing.Point(10, 67);
          this.floorEditPageBikesLabel.Name = "floorEditPageBikesLabel";
-         this.floorEditPageBikesLabel.Size = new System.Drawing.Size(0, 16);
+         this.floorEditPageBikesLabel.Size = new System.Drawing.Size(45, 16);
          this.floorEditPageBikesLabel.TabIndex = 5;
          this.floorEditPageBikesLabel.Text = "Bikes:";
          // 
@@ -244,7 +244,7 @@
          this.floorEditPageCarsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.floorEditPageCarsLabel.Location = new System.Drawing.Point(10, 40);
          this.floorEditPageCarsLabel.Name = "floorEditPageCarsLabel";
-         this.floorEditPageCarsLabel.Size = new System.Drawing.Size(0, 16);
+         this.floorEditPageCarsLabel.Size = new System.Drawing.Size(39, 16);
          this.floorEditPageCarsLabel.TabIndex = 4;
          this.floorEditPageCarsLabel.Text = "Cars:";
          // 
@@ -360,7 +360,7 @@
          this.driveInBikesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.driveInBikesLabel.Location = new System.Drawing.Point(8, 39);
          this.driveInBikesLabel.Name = "driveInBikesLabel";
-         this.driveInBikesLabel.Size = new System.Drawing.Size(0, 16);
+         this.driveInBikesLabel.Size = new System.Drawing.Size(45, 16);
          this.driveInBikesLabel.TabIndex = 6;
          this.driveInBikesLabel.Text = "Bikes:";
          // 
@@ -370,7 +370,7 @@
          this.driveInCarsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.driveInCarsLabel.Location = new System.Drawing.Point(8, 12);
          this.driveInCarsLabel.Name = "driveInCarsLabel";
-         this.driveInCarsLabel.Size = new System.Drawing.Size(0, 16);
+         this.driveInCarsLabel.Size = new System.Drawing.Size(39, 16);
          this.driveInCarsLabel.TabIndex = 5;
          this.driveInCarsLabel.Text = "Cars:";
          // 
@@ -421,7 +421,7 @@
          this.driveOutBikesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.driveOutBikesLabel.Location = new System.Drawing.Point(8, 39);
          this.driveOutBikesLabel.Name = "driveOutBikesLabel";
-         this.driveOutBikesLabel.Size = new System.Drawing.Size(0, 16);
+         this.driveOutBikesLabel.Size = new System.Drawing.Size(45, 16);
          this.driveOutBikesLabel.TabIndex = 11;
          this.driveOutBikesLabel.Text = "Bikes:";
          // 
@@ -431,7 +431,7 @@
          this.driveOutCarsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.driveOutCarsLabel.Location = new System.Drawing.Point(8, 12);
          this.driveOutCarsLabel.Name = "driveOutCarsLabel";
-         this.driveOutCarsLabel.Size = new System.Drawing.Size(0, 16);
+         this.driveOutCarsLabel.Size = new System.Drawing.Size(39, 16);
          this.driveOutCarsLabel.TabIndex = 10;
          this.driveOutCarsLabel.Text = "Cars:";
          // 
