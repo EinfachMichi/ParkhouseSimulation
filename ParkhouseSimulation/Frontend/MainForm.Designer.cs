@@ -191,6 +191,7 @@
          this.floorEditPageButton.TabIndex = 8;
          this.floorEditPageButton.Text = "Edit floor";
          this.floorEditPageButton.UseVisualStyleBackColor = true;
+         this.floorEditPageButton.Click += new System.EventHandler(this.FloorEditPageButton_Click);
          // 
          // floorEditPageBikesNumericUpDown
          // 
@@ -260,6 +261,7 @@
          this.floorRemovePageButton.TabIndex = 14;
          this.floorRemovePageButton.Text = "Remove floor";
          this.floorRemovePageButton.UseVisualStyleBackColor = true;
+         this.floorRemovePageButton.Click += new System.EventHandler(this.FloorRemovePageButton_Click);
          // 
          // floorRemovePageComboBox
          // 
@@ -276,20 +278,20 @@
          this.floorDisplayPanel.BackColor = System.Drawing.Color.Violet;
          this.floorDisplayPanel.Location = new System.Drawing.Point(215, 51);
          this.floorDisplayPanel.Name = "floorDisplayPanel";
-         this.floorDisplayPanel.Size = new System.Drawing.Size(531, 498);
+         this.floorDisplayPanel.Size = new System.Drawing.Size(547, 498);
          this.floorDisplayPanel.TabIndex = 4;
          // 
          // MainForm
          // 
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
          this.BackColor = System.Drawing.Color.MediumPurple;
-         this.ClientSize = new System.Drawing.Size(756, 561);
+         this.ClientSize = new System.Drawing.Size(774, 561);
          this.Controls.Add(this.floorDisplayPanel);
          this.Controls.Add(this.floorCreationTabControl);
          this.Controls.Add(this.floorSelectionComboBox);
          this.Location = new System.Drawing.Point(15, 15);
-         this.MaximumSize = new System.Drawing.Size(772, 600);
-         this.MinimumSize = new System.Drawing.Size(772, 600);
+         this.MaximumSize = new System.Drawing.Size(790, 600);
+         this.MinimumSize = new System.Drawing.Size(790, 600);
          this.Name = "MainForm";
          this.RightToLeftLayout = true;
          this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

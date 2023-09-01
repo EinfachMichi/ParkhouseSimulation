@@ -44,6 +44,9 @@ namespace ParkhouseSimulation.Frontend
             case 1:
                RefreshFloorEditPage(floorSelectionComboBox.SelectedIndex);
                break;
+            case 2:
+               UpdateComboBox(floorSelectionComboBox.SelectedIndex, floorRemovePageComboBox);
+               break;
          }
       }
       
@@ -57,10 +60,26 @@ namespace ParkhouseSimulation.Frontend
       private void FloorSelectionComboBox_SelectedIndexChanged(object sender, EventArgs e)
       {
          int selectedIndex = floorSelectionComboBox.SelectedIndex;
-         HideFloorPanels(selectedIndex);
+         RefreshFloorDisplay(selectedIndex);
          RefreshFloorEditPage(selectedIndex);
       }
       
+      private void FloorEditPageButton_Click(object sender, EventArgs e)
+      {
+         int selectedIndex = floorEditPageComboBox.SelectedIndex;
+         int carCount = (int)floorEditPageCarsNumericUpDown.Value;
+         int bikeCount = (int)floorEditPageBikesNumericUpDown.Value;
+         
+         Floor newFloor = new Floor(carCount, bikeCount, GetAlphabeticalCharacterAt(selectedIndex));
+         parkhouse.ReplaceFloor(selectedIndex, newFloor);
+         FloorPanel newPanel = new FloorPanel(newFloor);
+         floorDisplayPanel.Controls.Add(newPanel);
+         floorPanels[selectedIndex].Dispose();
+         floorPanels[selectedIndex] = newPanel;
+         
+         RefreshFloorDisplay(selectedIndex);
+      }
+
       #endregion
 
       private void RefreshFloorCreatePage()
@@ -79,6 +98,11 @@ namespace ParkhouseSimulation.Frontend
          Floor currentFloor = parkhouse.GetFloor(floorIndex);
          floorEditPageCarsNumericUpDown.Value = parkhouse.GetCarSlotCount(currentFloor);
          floorEditPageBikesNumericUpDown.Value = parkhouse.GetBikeSlotCount(currentFloor);
+      }
+
+      private void RefreshFloorDisplay(int index)
+      {
+         HideFloorPanels(index);
       }
       
       #region Utilty
