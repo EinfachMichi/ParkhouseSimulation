@@ -22,15 +22,16 @@ namespace ParkhouseSimulation.Frontend
       {
          int carCount = (int) floorCreatePageCarsNumericUpDown.Value;
          int bikeCount = (int) floorCreatePageBikesNumericUpDown.Value;
+         
          Floor newFloor = parkhouse.AddFloor(carCount, bikeCount);
          
          FloorPanel newFloorPanel = new FloorPanel(newFloor);
          floorPanels.Add(newFloorPanel);
          floorDisplayPanel.Controls.Add(newFloorPanel);
-         HideFloorPanels(floorPanels.Count - 1);
+         HideAllFloorPanelsExceptFor(floorPanels.Count - 1);
 
          RefreshFloorCreatePage();
-         UpdateComboBox(floorSelectionComboBox);
+         UpdateFloorComboBox(floorSelectionComboBox);
          floorSelectionComboBox.SelectedIndex = parkhouse.Floors - 1;
       }
 
@@ -45,7 +46,7 @@ namespace ParkhouseSimulation.Frontend
                RefreshFloorEditPage(floorSelectionComboBox.SelectedIndex);
                break;
             case 2:
-               UpdateComboBox(floorSelectionComboBox.SelectedIndex, floorRemovePageComboBox);
+               RefreshFloorRemovePage(floorSelectionComboBox.SelectedIndex);
                break;
          }
       }
@@ -54,7 +55,7 @@ namespace ParkhouseSimulation.Frontend
       {
          int selectedIndex = floorEditPageComboBox.SelectedIndex;
          RefreshFloorEditPage(selectedIndex);
-         UpdateComboBox(selectedIndex, floorSelectionComboBox);
+         UpdateFloorComboBox(selectedIndex, floorSelectionComboBox);
       }
       
       private void FloorSelectionComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -84,13 +85,11 @@ namespace ParkhouseSimulation.Frontend
       private void FloorRemovePageComboBox_DropDownClosed(object sender, EventArgs e)
       {
          int selectedIndex = floorRemovePageComboBox.SelectedIndex;
-         UpdateComboBox(selectedIndex, floorSelectionComboBox);
+         UpdateFloorComboBox(selectedIndex, floorSelectionComboBox);
       }
       
       private void FloorRemovePageButton_Click(object sender, EventArgs e)
       {
-         if(parkhouse.Floors == 1) return;
-         
          int removeIndex = floorRemovePageComboBox.SelectedIndex;
 
          floorPanels[removeIndex].Dispose();
@@ -103,16 +102,15 @@ namespace ParkhouseSimulation.Frontend
          {
             for(int i = 0; i < floorsToRename; i++)
             {
-               Floor renamedFloor = parkhouse.GetFloor(removeIndex + i);
-               renamedFloor.Rename(GetAlphabeticalCharacterAt(removeIndex + i));
-               floorPanels[removeIndex + i].Rename(renamedFloor);
+               Floor floor = parkhouse.GetFloor(removeIndex + i);
+               floor.Rename(GetAlphabeticalCharacterAt(removeIndex + i));
             }
          }
 
          int temp = 0;
          if(floorsToRename == 0) temp = -1;
          
-         UpdateComboBox(removeIndex + temp, floorSelectionComboBox);
+         UpdateFloorComboBox(removeIndex + temp, floorSelectionComboBox);
          RefreshFloorRemovePage(removeIndex + temp);
       }
       
@@ -127,7 +125,7 @@ namespace ParkhouseSimulation.Frontend
 
       private void RefreshFloorEditPage(int floorIndex)
       {
-         UpdateComboBox(floorIndex, floorEditPageComboBox);
+         UpdateFloorComboBox(floorIndex, floorEditPageComboBox);
          
          if (parkhouse.Floors == 0) return;
          
@@ -138,12 +136,13 @@ namespace ParkhouseSimulation.Frontend
 
       private void RefreshFloorRemovePage(int index)
       {
-         UpdateComboBox(index, floorRemovePageComboBox);
+         UpdateFloorComboBox(index, floorRemovePageComboBox);
+         floorRemovePageButton.Enabled = parkhouse.Floors > 1;
       }
       
       private void RefreshFloorDisplay(int index)
       {
-         HideFloorPanels(index);
+         HideAllFloorPanelsExceptFor(index);
       }
       
       #region Utilty
@@ -153,13 +152,13 @@ namespace ParkhouseSimulation.Frontend
          return ((char) ('A' + index)).ToString();
       }
 
-      private void HideFloorPanels(int excludingIndex)
+      private void HideAllFloorPanelsExceptFor(int excludingIndex)
       {
          foreach(FloorPanel floorPanel in floorPanels) floorPanel.Visible = false;
          floorPanels[excludingIndex].Visible = true;
       }
 
-      private void UpdateComboBox(ComboBox comboBox)
+      private void UpdateFloorComboBox(ComboBox comboBox)
       {
          string[] data = new string[parkhouse.Floors];
          for(int i = 0; i < data.Length; i++)
@@ -167,9 +166,9 @@ namespace ParkhouseSimulation.Frontend
          comboBox.DataSource = data;
       }
 
-      private void UpdateComboBox(int newIndex, ComboBox comboBox)
+      private void UpdateFloorComboBox(int newIndex, ComboBox comboBox)
       {
-         UpdateComboBox(comboBox);
+         UpdateFloorComboBox(comboBox);
          comboBox.SelectedIndex = newIndex;
       }
 

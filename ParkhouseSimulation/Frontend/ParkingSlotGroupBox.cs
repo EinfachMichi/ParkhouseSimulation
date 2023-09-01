@@ -12,8 +12,14 @@ namespace ParkhouseSimulation.Frontend
       private Label carIdLabel;
       private Label carIdDisplayLabel;
 
+      private ParkingSlot parkingSlot;
+      
       public ParkingSlotGroupBox(ParkingSlot slot)
       {
+         parkingSlot = slot;
+
+         slot.OnRename += Rename;
+         
          panel = new Panel();
          vehicleTypeLabel = new Label();
          vehicleTypeDisplayLabel = new Label();
@@ -64,9 +70,14 @@ namespace ParkhouseSimulation.Frontend
          carIdLabel.Text = "ID:";
       }
 
-      public void Rename(ParkingSlot newParkingSlot)
+      ~ParkingSlotGroupBox()
       {
-         Text = newParkingSlot.ParkingSlotID;
+         parkingSlot.OnRename -= Rename;
+      } 
+      
+      public void Rename(string id)
+      {
+         Text = id;
       }
    }
 }
