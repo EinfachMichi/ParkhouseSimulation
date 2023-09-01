@@ -23,5 +23,17 @@ namespace ParkhouseSimulation.Backend
          for(; slotID < bikeCount + carCount; slotID++)
             bikeSlots.Add(new ParkingSlot(id + slotID, VehicleType.Bike));
       }
+
+      public void Rename(string id)
+      {
+         floorID = id;
+         int slotID = 0;
+         
+         for(; slotID < carSlots.Count; slotID++)
+            carSlots[slotID].Rename(id + slotID);
+         
+         for(; slotID < bikeSlots.Count + carSlots.Count; slotID++)
+            bikeSlots[slotID].Rename(id + slotID);
+      }
    }
 }

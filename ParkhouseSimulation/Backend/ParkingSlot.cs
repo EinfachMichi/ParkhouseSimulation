@@ -13,5 +13,10 @@
          parkingSlotID = id;
          this.type = type;
       }
+
+      public void Rename(string id)
+      {
+         parkingSlotID = id;
+      }
    }
 }

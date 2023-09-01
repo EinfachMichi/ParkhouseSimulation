@@ -9,7 +9,7 @@ namespace ParkhouseSimulation.Frontend
    {
       private List<ParkingSlotGroupBox> carParkingSlots = new List<ParkingSlotGroupBox>();
       private List<ParkingSlotGroupBox> bikeParkingSlots = new List<ParkingSlotGroupBox>();
-
+      
       public FloorPanel(Floor floor)
       {
          Size = new Size(547, 498);
@@ -28,6 +28,19 @@ namespace ParkhouseSimulation.Frontend
             ParkingSlotGroupBox newSlot = new ParkingSlotGroupBox(bikeSlot);
             bikeParkingSlots.Add(newSlot);
             Controls.Add(newSlot);
+         }
+      }
+
+      public void Rename(Floor newFloor)
+      {
+         for(int i = 0; i < carParkingSlots.Count; i++)
+         {
+            carParkingSlots[i].Rename(newFloor.CarSlots[i]);
+         }
+         
+         for(int i = 0; i < bikeParkingSlots.Count; i++)
+         {
+            bikeParkingSlots[i].Rename(newFloor.BikeSlots[i]);
          }
       }
    }

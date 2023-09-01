@@ -63,5 +63,10 @@ namespace ParkhouseSimulation.Frontend
          carIdLabel.TabIndex = 0;
          carIdLabel.Text = "ID:";
       }
+
+      public void Rename(ParkingSlot newParkingSlot)
+      {
+         Text = newParkingSlot.ParkingSlotID;
+      }
    }
 }

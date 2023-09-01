@@ -52,9 +52,9 @@ namespace ParkhouseSimulation.Frontend
       
       private void FloorEditPageComboBox_DropDownClosed(object sender, EventArgs e)
       {
-         int floorIndex = floorEditPageComboBox.SelectedIndex;
-         RefreshFloorEditPage(floorIndex);
-         UpdateComboBox(floorIndex, floorSelectionComboBox);
+         int selectedIndex = floorEditPageComboBox.SelectedIndex;
+         RefreshFloorEditPage(selectedIndex);
+         UpdateComboBox(selectedIndex, floorSelectionComboBox);
       }
       
       private void FloorSelectionComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -62,6 +62,7 @@ namespace ParkhouseSimulation.Frontend
          int selectedIndex = floorSelectionComboBox.SelectedIndex;
          RefreshFloorDisplay(selectedIndex);
          RefreshFloorEditPage(selectedIndex);
+         RefreshFloorRemovePage(selectedIndex);
       }
       
       private void FloorEditPageButton_Click(object sender, EventArgs e)
@@ -80,6 +81,41 @@ namespace ParkhouseSimulation.Frontend
          RefreshFloorDisplay(selectedIndex);
       }
 
+      private void FloorRemovePageComboBox_DropDownClosed(object sender, EventArgs e)
+      {
+         int selectedIndex = floorRemovePageComboBox.SelectedIndex;
+         UpdateComboBox(selectedIndex, floorSelectionComboBox);
+      }
+      
+      private void FloorRemovePageButton_Click(object sender, EventArgs e)
+      {
+         if(parkhouse.Floors == 1) return;
+         
+         int removeIndex = floorRemovePageComboBox.SelectedIndex;
+
+         floorPanels[removeIndex].Dispose();
+         floorPanels.RemoveAt(removeIndex);
+         parkhouse.RemoveFloor(removeIndex);
+         
+         int floorsToRename = parkhouse.Floors - removeIndex;
+
+         if(floorsToRename > 0)
+         {
+            for(int i = 0; i < floorsToRename; i++)
+            {
+               Floor renamedFloor = parkhouse.GetFloor(removeIndex + i);
+               renamedFloor.Rename(GetAlphabeticalCharacterAt(removeIndex + i));
+               floorPanels[removeIndex + i].Rename(renamedFloor);
+            }
+         }
+
+         int temp = 0;
+         if(floorsToRename == 0) temp = -1;
+         
+         UpdateComboBox(removeIndex + temp, floorSelectionComboBox);
+         RefreshFloorRemovePage(removeIndex + temp);
+      }
+      
       #endregion
 
       private void RefreshFloorCreatePage()
@@ -100,6 +136,11 @@ namespace ParkhouseSimulation.Frontend
          floorEditPageBikesNumericUpDown.Value = parkhouse.GetBikeSlotCount(currentFloor);
       }
 
+      private void RefreshFloorRemovePage(int index)
+      {
+         UpdateComboBox(index, floorRemovePageComboBox);
+      }
+      
       private void RefreshFloorDisplay(int index)
       {
          HideFloorPanels(index);
