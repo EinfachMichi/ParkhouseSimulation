@@ -90,6 +90,11 @@ namespace ParkhouseSimulation.Backend
          return null;
       }
 
+      public Vehicle[] RemoveVehicle(int floorIndex)
+      {
+         return floors[floorIndex].RemoveAllVehicles();
+      }
+      
       public Vehicle RemoveVehicle(VehicleType type)
       {
          for(int i = Floors - 1; i >= 0; i--)

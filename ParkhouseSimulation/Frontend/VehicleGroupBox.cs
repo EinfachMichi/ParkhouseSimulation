@@ -6,7 +6,7 @@ namespace ParkhouseSimulation.Frontend
 {
    public class VehicleGroupBox : GroupBox
    {
-      public string CarID { get; }
+      public string VehicleID { get; }
       
       private TextBox vehiclePositionTextbox;
       private Label vehiclePostionLabel;
@@ -15,7 +15,7 @@ namespace ParkhouseSimulation.Frontend
 
       public VehicleGroupBox(Vehicle vehicle)
       {
-         CarID = vehicle.ID;
+         VehicleID = vehicle.ID;
          
          vehiclePositionTextbox = new TextBox();
          vehiclePostionLabel = new Label();

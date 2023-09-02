@@ -92,6 +92,9 @@ namespace ParkhouseSimulation.Frontend
          int carCount = (int)floorEditPageCarsNumericUpDown.Value;
          int bikeCount = (int)floorEditPageBikesNumericUpDown.Value;
          
+         Vehicle[] vehicles = parkhouse.RemoveVehicle(selectedIndex);
+         if(vehicles != null) VehiclesRemoved(vehicles);
+         
          Floor newFloor = new Floor(carCount, bikeCount, GetAlphabeticalCharacterAt(selectedIndex));
          parkhouse.ReplaceFloor(selectedIndex, newFloor);
          FloorPanel newPanel = new FloorPanel(newFloor);
@@ -126,6 +129,9 @@ namespace ParkhouseSimulation.Frontend
          
          int removeIndex = floorRemovePageComboBox.SelectedIndex;
 
+         Vehicle[] vehicles = parkhouse.RemoveVehicle(removeIndex);
+         VehiclesRemoved(vehicles);
+         
          floorPanels[removeIndex].Dispose();
          floorPanels.RemoveAt(removeIndex);
          parkhouse.RemoveFloor(removeIndex);
@@ -393,13 +399,45 @@ namespace ParkhouseSimulation.Frontend
          RefreshVehicleDisplay();
       }
 
+      private void VehiclesRemoved(Vehicle[] vehicles)
+      {
+         for(int i = 0; i < vehicles.Length; i++)
+         {
+            if(vehicles[i].Type == VehicleType.Car)
+            {
+               for(int j = 0; j < carGroupBoxes.Count; j++)
+               {
+                  if(vehicles[i].ID == carGroupBoxes[j].VehicleID)
+                  {
+                     carGroupBoxes[j].Dispose();
+                     carGroupBoxes.RemoveAt(j);
+                     break;
+                  }
+               }
+            }
+            else if(vehicles[i].Type == VehicleType.Bike)
+            {
+               for(int j = 0; j < bikeGroupBoxes.Count; j++)
+               {
+                  if(vehicles[i].ID == bikeGroupBoxes[j].VehicleID)
+                  {
+                     bikeGroupBoxes[j].Dispose();
+                     bikeGroupBoxes.RemoveAt(j);
+                     break;
+                  }
+               }
+            }
+         }
+         RefreshVehicleDisplay();
+      }
+
       private void CarsRemoved(Vehicle[] cars)
       {
          foreach(Vehicle car in cars)
          {
             for(int i = 0; i < carGroupBoxes.Count; i++)
             {
-               if(car.ID == carGroupBoxes[i].CarID)
+               if(car.ID == carGroupBoxes[i].VehicleID)
                {
                   carGroupBoxes[i].Dispose();
                   carGroupBoxes.RemoveAt(i);
@@ -416,7 +454,7 @@ namespace ParkhouseSimulation.Frontend
          {
             for(int i = 0; i < bikeGroupBoxes.Count; i++)
             {
-               if(bike.ID == bikeGroupBoxes[i].CarID)
+               if(bike.ID == bikeGroupBoxes[i].VehicleID)
                {
                   bikeGroupBoxes[i].Dispose();
                   bikeGroupBoxes.RemoveAt(i);

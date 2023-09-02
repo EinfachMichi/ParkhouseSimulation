@@ -39,12 +39,18 @@ namespace ParkhouseSimulation.Backend
       {
          floorID = id;
          int slotID = 0;
+
+         for(int i = 0; i < carSlots.Count; i++)
+         {
+            carSlots[i].Rename(id + slotID);
+            slotID++;
+         }
          
-         for(; slotID < carSlots.Count; slotID++)
-            carSlots[slotID].Rename(id + slotID);
-         
-         for(; slotID < bikeSlots.Count + carSlots.Count; slotID++)
-            bikeSlots[slotID].Rename(id + slotID);
+         for(int i = 0; i < bikeSlots.Count; i++)
+         {
+            bikeSlots[i].Rename(id + slotID);
+            slotID++;
+         }
       }
 
       public int FreeParkingSlotCount()
@@ -123,6 +129,20 @@ namespace ParkhouseSimulation.Backend
             }
          }
          return null;
+      }
+
+      public Vehicle[] RemoveAllVehicles()
+      {
+         List<Vehicle> vehicles = new List<Vehicle>();
+         for(int i = 0; i < slots.Count; i++)
+         {
+            if(!slots[i].Free)
+            {
+               vehicles.Add(slots[i].Vehicle);
+            }
+            slots[i].Vehicle = null;
+         }
+         return vehicles.ToArray();
       }
    }
 }
