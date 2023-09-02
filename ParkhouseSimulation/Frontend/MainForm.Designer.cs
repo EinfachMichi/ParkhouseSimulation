@@ -192,6 +192,7 @@
          this.floorCreatePageBikesNumericUpDown.Name = "floorCreatePageBikesNumericUpDown";
          this.floorCreatePageBikesNumericUpDown.Size = new System.Drawing.Size(160, 22);
          this.floorCreatePageBikesNumericUpDown.TabIndex = 3;
+         this.floorCreatePageBikesNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FloorCreatePageBikesNumericUpDown_KeyDown);
          // 
          // floorCreatePageCarsNumericUpDown
          // 
@@ -200,6 +201,7 @@
          this.floorCreatePageCarsNumericUpDown.Name = "floorCreatePageCarsNumericUpDown";
          this.floorCreatePageCarsNumericUpDown.Size = new System.Drawing.Size(160, 22);
          this.floorCreatePageCarsNumericUpDown.TabIndex = 2;
+         this.floorCreatePageCarsNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FloorCreatePageCarsNumericUpDown_KeyDown);
          // 
          // floorCreatePageBikeLabel
          // 
@@ -255,6 +257,7 @@
          this.floorEditPageBikesNumericUpDown.Name = "floorEditPageBikesNumericUpDown";
          this.floorEditPageBikesNumericUpDown.Size = new System.Drawing.Size(122, 22);
          this.floorEditPageBikesNumericUpDown.TabIndex = 7;
+         this.floorEditPageBikesNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FloorEditPageBikesNumericUpDown_KeyDown);
          // 
          // floorEditPageCarsNumericUpDown
          // 
@@ -263,6 +266,7 @@
          this.floorEditPageCarsNumericUpDown.Name = "floorEditPageCarsNumericUpDown";
          this.floorEditPageCarsNumericUpDown.Size = new System.Drawing.Size(122, 22);
          this.floorEditPageCarsNumericUpDown.TabIndex = 6;
+         this.floorEditPageCarsNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FloorEditPageCarsNumericUpDown_KeyDown);
          // 
          // floorEditPageBikesLabel
          // 
@@ -382,6 +386,7 @@
          this.driveInBikesNumericUpDown.Name = "driveInBikesNumericUpDown";
          this.driveInBikesNumericUpDown.Size = new System.Drawing.Size(162, 22);
          this.driveInBikesNumericUpDown.TabIndex = 8;
+         this.driveInBikesNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DriveInBikesNumericUpDown_KeyDown);
          this.driveInBikesNumericUpDown.Leave += new System.EventHandler(this.DriveInBikesNumericUpDown_Leave);
          // 
          // driveInCarsNumericUpDown
@@ -391,6 +396,7 @@
          this.driveInCarsNumericUpDown.Name = "driveInCarsNumericUpDown";
          this.driveInCarsNumericUpDown.Size = new System.Drawing.Size(162, 22);
          this.driveInCarsNumericUpDown.TabIndex = 7;
+         this.driveInCarsNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DriveInCarsNumericUpDown_KeyDown);
          this.driveInCarsNumericUpDown.Leave += new System.EventHandler(this.DriveInCarsNumericUpDown_Leave);
          // 
          // driveInBikesLabel
@@ -421,10 +427,10 @@
          this.driveOutPage.Controls.Add(this.driveOutCarsNumericUpDown);
          this.driveOutPage.Controls.Add(this.driveOutBikesLabel);
          this.driveOutPage.Controls.Add(this.driveOutCarsLabel);
-         this.driveOutPage.Location = new System.Drawing.Point(4, 22);
+         this.driveOutPage.Location = new System.Drawing.Point(4, 25);
          this.driveOutPage.Name = "driveOutPage";
          this.driveOutPage.Padding = new System.Windows.Forms.Padding(3);
-         this.driveOutPage.Size = new System.Drawing.Size(234, 90);
+         this.driveOutPage.Size = new System.Drawing.Size(234, 87);
          this.driveOutPage.TabIndex = 1;
          this.driveOutPage.Text = "Drive out";
          // 
@@ -432,7 +438,7 @@
          // 
          this.driveOutButton.Dock = System.Windows.Forms.DockStyle.Bottom;
          this.driveOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.driveOutButton.Location = new System.Drawing.Point(3, 64);
+         this.driveOutButton.Location = new System.Drawing.Point(3, 61);
          this.driveOutButton.Name = "driveOutButton";
          this.driveOutButton.Size = new System.Drawing.Size(228, 23);
          this.driveOutButton.TabIndex = 14;
@@ -446,6 +452,7 @@
          this.driveOutBikesNumericUpDown.Name = "driveOutBikesNumericUpDown";
          this.driveOutBikesNumericUpDown.Size = new System.Drawing.Size(122, 22);
          this.driveOutBikesNumericUpDown.TabIndex = 13;
+         this.driveOutBikesNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DriveOutBikesNumericUpDown_KeyDown);
          this.driveOutBikesNumericUpDown.Leave += new System.EventHandler(this.DriveOutBikesNumericUpDown_Leave);
          // 
          // driveOutCarsNumericUpDown
@@ -455,6 +462,7 @@
          this.driveOutCarsNumericUpDown.Name = "driveOutCarsNumericUpDown";
          this.driveOutCarsNumericUpDown.Size = new System.Drawing.Size(122, 22);
          this.driveOutCarsNumericUpDown.TabIndex = 12;
+         this.driveOutCarsNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DriveOutCarsNumericUpDown_KeyDown);
          this.driveOutCarsNumericUpDown.Leave += new System.EventHandler(this.DriveOutCarsNumericUpDown_Leave);
          // 
          // driveOutBikesLabel

@@ -154,6 +154,38 @@ namespace ParkhouseSimulation.Frontend
          RefreshFloorRemovePage(removeIndex + temp);
          RefreshParkhouseStats();
       }
+      
+      private void FloorCreatePageCarsNumericUpDown_KeyDown(object sender, KeyEventArgs e)
+      {
+         if(e.KeyCode == Keys.Enter)
+         {
+            CreateFloorButton_Click(sender, e);
+         }
+      }
+
+      private void FloorCreatePageBikesNumericUpDown_KeyDown(object sender, KeyEventArgs e)
+      {
+         if(e.KeyCode == Keys.Enter)
+         {
+            CreateFloorButton_Click(sender, e);
+         }
+      }
+      
+      private void FloorEditPageCarsNumericUpDown_KeyDown(object sender, KeyEventArgs e)
+      {
+         if(e.KeyCode == Keys.Enter)
+         {
+            FloorEditPageButton_Click(sender, e);
+         }
+      }
+
+      private void FloorEditPageBikesNumericUpDown_KeyDown(object sender, KeyEventArgs e)
+      {
+         if(e.KeyCode == Keys.Enter)
+         {
+            FloorEditPageButton_Click(sender, e);
+         }
+      }
 
       //----------------------------------------------------------------------------------------------------------------
       
@@ -286,6 +318,38 @@ namespace ParkhouseSimulation.Frontend
       private void DriveOutBikesNumericUpDown_Leave(object sender, EventArgs e)
       {
          RefreshDriveOutPage();
+      }
+      
+      private void DriveInCarsNumericUpDown_KeyDown(object sender, KeyEventArgs e)
+      {
+         if(e.KeyCode == Keys.Enter)
+         {
+            DriveInButton_Click(sender, e);
+         }
+      }
+
+      private void DriveInBikesNumericUpDown_KeyDown(object sender, KeyEventArgs e)
+      {
+         if(e.KeyCode == Keys.Enter)
+         {
+            DriveInButton_Click(sender, e);
+         }
+      }
+
+      private void DriveOutCarsNumericUpDown_KeyDown(object sender, KeyEventArgs e)
+      {
+         if(e.KeyCode == Keys.Enter)
+         {
+            DriveOutButton_Click(sender, e);
+         }
+      }
+
+      private void DriveOutBikesNumericUpDown_KeyDown(object sender, KeyEventArgs e)
+      {
+         if(e.KeyCode == Keys.Enter)
+         {
+            DriveOutButton_Click(sender, e);
+         }
       }
 
       //----------------------------------------------------------------------------------------------------------------
