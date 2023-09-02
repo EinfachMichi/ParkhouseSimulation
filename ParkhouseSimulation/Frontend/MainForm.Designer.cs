@@ -332,7 +332,7 @@
          // 
          this.driveInOutTabControl.Controls.Add(this.driveInPage);
          this.driveInOutTabControl.Controls.Add(this.driveOutPage);
-         this.driveInOutTabControl.Location = new System.Drawing.Point(12, 161);
+         this.driveInOutTabControl.Location = new System.Drawing.Point(12, 175);
          this.driveInOutTabControl.Name = "driveInOutTabControl";
          this.driveInOutTabControl.SelectedIndex = 0;
          this.driveInOutTabControl.Size = new System.Drawing.Size(197, 116);
