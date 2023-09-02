@@ -71,6 +71,7 @@ namespace ParkhouseSimulation.Frontend
          cardIDTextbox.TabIndex = 1;
          cardIDTextbox.Text = "NONE";
          cardIDTextbox.Font = new Font("Microsoft Sans Serif", 9F, GraphicsUnit.Point);
+         cardIDTextbox.TabStop = false;
 
          vehicleTypeTextbox.Location = new Point(40, 29);
          vehicleTypeTextbox.Name = "textBox2";
@@ -79,6 +80,7 @@ namespace ParkhouseSimulation.Frontend
          vehicleTypeTextbox.TabIndex = 2;
          vehicleTypeTextbox.Text = slot.Type.ToString();
          vehicleTypeTextbox.Font = new Font("Microsoft Sans Serif", 9F, GraphicsUnit.Point);
+         vehicleTypeTextbox.TabStop = false;
       }
 
       ~ParkingSlotGroupBox()

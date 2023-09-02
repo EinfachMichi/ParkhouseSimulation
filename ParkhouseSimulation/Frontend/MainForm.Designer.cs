@@ -532,7 +532,7 @@
          this.statsOccupiedBikeSlotsTextbox.Name = "statsOccupiedBikeSlotsTextbox";
          this.statsOccupiedBikeSlotsTextbox.ReadOnly = true;
          this.statsOccupiedBikeSlotsTextbox.Size = new System.Drawing.Size(131, 22);
-         this.statsOccupiedBikeSlotsTextbox.TabIndex = 13;
+         this.statsOccupiedBikeSlotsTextbox.TabIndex = 18;
          // 
          // statsOccupiedCarSlotsLabel
          // 
@@ -552,7 +552,7 @@
          this.statsOccupiedCarSlotsTextbox.Name = "statsOccupiedCarSlotsTextbox";
          this.statsOccupiedCarSlotsTextbox.ReadOnly = true;
          this.statsOccupiedCarSlotsTextbox.Size = new System.Drawing.Size(131, 22);
-         this.statsOccupiedCarSlotsTextbox.TabIndex = 14;
+         this.statsOccupiedCarSlotsTextbox.TabIndex = 17;
          // 
          // statsOccupiedBikeSlotsLabel
          // 
@@ -586,7 +586,7 @@
          this.statsFreeBikeSlotsTextbox.Name = "statsFreeBikeSlotsTextbox";
          this.statsFreeBikeSlotsTextbox.ReadOnly = true;
          this.statsFreeBikeSlotsTextbox.Size = new System.Drawing.Size(131, 22);
-         this.statsFreeBikeSlotsTextbox.TabIndex = 13;
+         this.statsFreeBikeSlotsTextbox.TabIndex = 16;
          // 
          // statsFreeCarSlotsTextbox
          // 
@@ -596,7 +596,7 @@
          this.statsFreeCarSlotsTextbox.Name = "statsFreeCarSlotsTextbox";
          this.statsFreeCarSlotsTextbox.ReadOnly = true;
          this.statsFreeCarSlotsTextbox.Size = new System.Drawing.Size(131, 22);
-         this.statsFreeCarSlotsTextbox.TabIndex = 14;
+         this.statsFreeCarSlotsTextbox.TabIndex = 15;
          // 
          // statsFreeCarSlotsLabel
          // 
@@ -668,7 +668,7 @@
          this.statsTotalBikeSlotsTextbox.Name = "statsTotalBikeSlotsTextbox";
          this.statsTotalBikeSlotsTextbox.ReadOnly = true;
          this.statsTotalBikeSlotsTextbox.Size = new System.Drawing.Size(131, 22);
-         this.statsTotalBikeSlotsTextbox.TabIndex = 11;
+         this.statsTotalBikeSlotsTextbox.TabIndex = 13;
          // 
          // statsTotalCarSlotsTextbox
          // 
