@@ -8,9 +8,9 @@ namespace ParkhouseSimulation.Frontend
    {
       private Panel panel;
       private Label vehicleTypeLabel;
-      private Label vehicleTypeDisplayLabel;
+      private TextBox vehicleTypeTextbox;
       private Label carIdLabel;
-      private Label carIdDisplayLabel;
+      private TextBox cardIDTextbox;
 
       private ParkingSlot parkingSlot;
       
@@ -20,12 +20,12 @@ namespace ParkhouseSimulation.Frontend
 
          slot.OnRename += Rename;
          slot.OnVehicleChanged += SlotOnOnVehicleChanged;
-         
+
          panel = new Panel();
          vehicleTypeLabel = new Label();
-         vehicleTypeDisplayLabel = new Label();
+         vehicleTypeTextbox = new TextBox();
          carIdLabel = new Label();
-         carIdDisplayLabel = new Label();
+         cardIDTextbox = new TextBox();
          
          BackColor = Color.FromArgb(0, 192, 0);
          Controls.Add(panel);
@@ -37,31 +37,23 @@ namespace ParkhouseSimulation.Frontend
          TabStop = false;
          Text = slot.ParkingSlotID;
 
-         panel.BackColor = Color.FromArgb(64, 64, 64);
+         Color color = slot.Type == VehicleType.Car ? Color.LightSkyBlue : Color.Chocolate;
+         panel.BackColor = color;
          panel.Controls.Add(vehicleTypeLabel);
-         panel.Controls.Add(vehicleTypeDisplayLabel);
+         panel.Controls.Add(vehicleTypeTextbox);
          panel.Controls.Add(carIdLabel);
-         panel.Controls.Add(carIdDisplayLabel);
+         panel.Controls.Add(cardIDTextbox);
          panel.Location = new Point(6, 15);
          panel.Name = $"SlotPanel{slot.ParkingSlotID}";
          panel.Size = new Size(88, 54);
-
-         vehicleTypeDisplayLabel.Location = new Point(44, 29);
-         vehicleTypeDisplayLabel.Name = $"SlotVehicleTypeDisplayLabel{slot.ParkingSlotID}";
-         vehicleTypeDisplayLabel.Size = new Size(66, 13);
-         vehicleTypeDisplayLabel.Text = slot.Type.ToString();
 
          vehicleTypeLabel.AutoSize = true;
          vehicleTypeLabel.Location = new Point(3, 29);
          vehicleTypeLabel.Name = $"SlotVehicleTypeLabel{slot.ParkingSlotID}";
          vehicleTypeLabel.Size = new Size(39, 13);
          vehicleTypeLabel.Text = "Type:";
-
-         carIdDisplayLabel.Location = new Point(44, 9);
-         carIdDisplayLabel.Name = $"SlotCarIDDisplayLabel{slot.ParkingSlotID}";
-         carIdDisplayLabel.Size = new Size(66, 13);
-         carIdDisplayLabel.TabIndex = 1;
-         carIdDisplayLabel.Text = "NONE";
+         vehicleTypeLabel.ForeColor = SystemColors.WindowText;
+         vehicleTypeLabel.Font = new Font("Microsoft Sans Serif", 9F, GraphicsUnit.Point);
 
          carIdLabel.AutoSize = true;
          carIdLabel.Location = new Point(3, 9);
@@ -69,6 +61,24 @@ namespace ParkhouseSimulation.Frontend
          carIdLabel.Size = new Size(43, 13);
          carIdLabel.TabIndex = 0;
          carIdLabel.Text = "ID:";
+         carIdLabel.ForeColor = SystemColors.WindowText;
+         carIdLabel.Font = new Font("Microsoft Sans Serif", 9F, GraphicsUnit.Point);
+         
+         cardIDTextbox.Location = new Point(40, 6);
+         cardIDTextbox.Name = "textBox1";
+         cardIDTextbox.ReadOnly = true;
+         cardIDTextbox.Size = new Size(45, 22);
+         cardIDTextbox.TabIndex = 1;
+         cardIDTextbox.Text = "NONE";
+         cardIDTextbox.Font = new Font("Microsoft Sans Serif", 9F, GraphicsUnit.Point);
+
+         vehicleTypeTextbox.Location = new Point(40, 29);
+         vehicleTypeTextbox.Name = "textBox2";
+         vehicleTypeTextbox.ReadOnly = true;
+         vehicleTypeTextbox.Size = new Size(45, 22);
+         vehicleTypeTextbox.TabIndex = 2;
+         vehicleTypeTextbox.Text = slot.Type.ToString();
+         vehicleTypeTextbox.Font = new Font("Microsoft Sans Serif", 9F, GraphicsUnit.Point);
       }
 
       ~ParkingSlotGroupBox()
@@ -81,12 +91,12 @@ namespace ParkhouseSimulation.Frontend
       {
          if(vehicle != null)
          {
-            carIdDisplayLabel.Text = vehicle.ID;
+            cardIDTextbox.Text = vehicle.ID;
             BackColor = Color.FromArgb(192, 0 ,0);
          }
          else
          {
-            carIdDisplayLabel.Text = "NONE";
+            cardIDTextbox.Text = "NONE";
             BackColor = Color.FromArgb(0, 192 ,0);
          }
       }

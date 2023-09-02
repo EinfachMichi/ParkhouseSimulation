@@ -75,6 +75,8 @@
          this.statsFreeCarSlotsLabel = new System.Windows.Forms.Label();
          this.statsFreeBikeSlotsLabel = new System.Windows.Forms.Label();
          this.statsTotalGroupBox = new System.Windows.Forms.GroupBox();
+         this.statsTotalSlotsTextbox = new System.Windows.Forms.TextBox();
+         this.statsTotalSlotsLabel = new System.Windows.Forms.Label();
          this.statsTotalBikeSlotsTextbox = new System.Windows.Forms.TextBox();
          this.statsTotalCarSlotsTextbox = new System.Windows.Forms.TextBox();
          this.statsTotalBikesTextbox = new System.Windows.Forms.TextBox();
@@ -92,8 +94,6 @@
          this.searchVehicleButton = new System.Windows.Forms.Button();
          this.searchVehicleEnterIDTextbox = new System.Windows.Forms.TextBox();
          this.searchVehicleEnterIDLabel = new System.Windows.Forms.Label();
-         this.statsTotalSlotsTextbox = new System.Windows.Forms.TextBox();
-         this.statsTotalSlotsLabel = new System.Windows.Forms.Label();
          this.floorCreationTabControl.SuspendLayout();
          this.createParkhousePage.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.floorCreatePageBikesNumericUpDown)).BeginInit();
@@ -620,6 +620,26 @@
          this.statsTotalGroupBox.TabStop = false;
          this.statsTotalGroupBox.Text = "Total";
          // 
+         // statsTotalSlotsTextbox
+         // 
+         this.statsTotalSlotsTextbox.BackColor = System.Drawing.SystemColors.ScrollBar;
+         this.statsTotalSlotsTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsTotalSlotsTextbox.Location = new System.Drawing.Point(92, 121);
+         this.statsTotalSlotsTextbox.Name = "statsTotalSlotsTextbox";
+         this.statsTotalSlotsTextbox.ReadOnly = true;
+         this.statsTotalSlotsTextbox.Size = new System.Drawing.Size(131, 22);
+         this.statsTotalSlotsTextbox.TabIndex = 14;
+         // 
+         // statsTotalSlotsLabel
+         // 
+         this.statsTotalSlotsLabel.AutoSize = true;
+         this.statsTotalSlotsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsTotalSlotsLabel.Location = new System.Drawing.Point(7, 122);
+         this.statsTotalSlotsLabel.Name = "statsTotalSlotsLabel";
+         this.statsTotalSlotsLabel.Size = new System.Drawing.Size(46, 18);
+         this.statsTotalSlotsLabel.TabIndex = 13;
+         this.statsTotalSlotsLabel.Text = "Slots:";
+         // 
          // statsTotalBikeSlotsTextbox
          // 
          this.statsTotalBikeSlotsTextbox.BackColor = System.Drawing.SystemColors.ScrollBar;
@@ -793,26 +813,6 @@
          this.searchVehicleEnterIDLabel.Size = new System.Drawing.Size(58, 16);
          this.searchVehicleEnterIDLabel.TabIndex = 0;
          this.searchVehicleEnterIDLabel.Text = "Enter ID;";
-         // 
-         // statsTotalSlotsTextbox
-         // 
-         this.statsTotalSlotsTextbox.BackColor = System.Drawing.SystemColors.ScrollBar;
-         this.statsTotalSlotsTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.statsTotalSlotsTextbox.Location = new System.Drawing.Point(92, 121);
-         this.statsTotalSlotsTextbox.Name = "statsTotalSlotsTextbox";
-         this.statsTotalSlotsTextbox.ReadOnly = true;
-         this.statsTotalSlotsTextbox.Size = new System.Drawing.Size(131, 22);
-         this.statsTotalSlotsTextbox.TabIndex = 14;
-         // 
-         // statsTotalSlotsLabel
-         // 
-         this.statsTotalSlotsLabel.AutoSize = true;
-         this.statsTotalSlotsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.statsTotalSlotsLabel.Location = new System.Drawing.Point(7, 122);
-         this.statsTotalSlotsLabel.Name = "statsTotalSlotsLabel";
-         this.statsTotalSlotsLabel.Size = new System.Drawing.Size(46, 18);
-         this.statsTotalSlotsLabel.TabIndex = 13;
-         this.statsTotalSlotsLabel.Text = "Slots:";
          // 
          // MainForm
          // 
