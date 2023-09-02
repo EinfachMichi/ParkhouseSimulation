@@ -8,7 +8,6 @@ namespace ParkhouseSimulation.Frontend
    public partial class MainForm : Form
    {
       private Parkhouse parkhouse = new Parkhouse();
-      private List<FloorPanel> floorPanels = new List<FloorPanel>();
 
       public MainForm()
       {
@@ -16,10 +15,13 @@ namespace ParkhouseSimulation.Frontend
          RefreshFloorCreatePage();
          RefreshDriveInPage();
          RefreshParkhouseStats();
+         InitVehicleSearchComboBox();
       }
 
       #region Floor (Create/Edit/Remove)
 
+      private List<FloorPanel> floorPanels = new List<FloorPanel>();
+      
       private void FloorCreationTabControl_SelectedIndexChanged(object sender, EventArgs e)
       {
          switch(floorCreationTabControl.SelectedIndex)
@@ -219,15 +221,19 @@ namespace ParkhouseSimulation.Frontend
          int carCount = (int) driveInCarsNumericUpDown.Value;
          int bikeCount = (int) driveInBikesNumericUpDown.Value;
 
+         Vehicle[] cars = new Vehicle[carCount];
          for(int i = 0; i < carCount; i++)
          {
-            parkhouse.AddVehicle(VehicleType.Car);
+            cars[i] = parkhouse.AddVehicle(VehicleType.Car);
          }
+         CarsAdded(cars);
          
+         Vehicle[] bikes = new Vehicle[bikeCount];
          for(int i = 0; i < bikeCount; i++)
          {
-            parkhouse.AddVehicle(VehicleType.Bike);
+            bikes[i] = parkhouse.AddVehicle(VehicleType.Bike);
          }
+         BikesAdded(bikes);
          
          RefreshDriveInPage();
          RefreshParkhouseStats();
@@ -238,15 +244,19 @@ namespace ParkhouseSimulation.Frontend
          int carCount = (int) driveOutCarsNumericUpDown.Value;
          int bikeCount = (int) driveOutBikesNumericUpDown.Value;
 
+         Vehicle[] cars = new Vehicle[carCount];
          for(int i = 0; i < carCount; i++)
          {
-            parkhouse.RemoveVehicle(VehicleType.Car);
+            cars[i] = parkhouse.RemoveVehicle(VehicleType.Car);
          }
-         
+         CarsRemoved(cars);
+
+         Vehicle[] bikes = new Vehicle[bikeCount];
          for(int i = 0; i < bikeCount; i++)
          {
-            parkhouse.RemoveVehicle(VehicleType.Bike);
+            bikes[i] = parkhouse.RemoveVehicle(VehicleType.Bike);
          }
+         BikesRemoved(bikes);
          
          RefreshDriveOutPage();
          RefreshParkhouseStats();
@@ -347,6 +357,124 @@ namespace ParkhouseSimulation.Frontend
          statsOccupiedBikeSlotsTextbox.Text = occupiedBikeSlots.ToString();
       }
 
+      #endregion
+
+      #region Vehicle Display
+
+      private List<VehicleGroupBox> carGroupBoxes = new List<VehicleGroupBox>();
+      private List<VehicleGroupBox> bikeGroupBoxes = new List<VehicleGroupBox>();
+      private VehicleShowType showType = VehicleShowType.All;
+
+      private void VehicleSearchComboBox_SelectedIndexChanged(object sender, EventArgs e)
+      {
+         showType = (VehicleShowType) vehicleSearchComboBox.SelectedIndex;
+         RefreshVehicleDisplay();
+      }
+      
+      //----------------------------------------------------------------------------------------------------------------
+      
+      private void CarsAdded(Vehicle[] cars)
+      {
+         foreach(Vehicle car in cars)
+         {
+            VehicleGroupBox newBox = new VehicleGroupBox(car);
+            carGroupBoxes.Add(newBox);
+         }
+         RefreshVehicleDisplay();
+      }
+
+      private void BikesAdded(Vehicle[] bikes)
+      {
+         foreach(Vehicle bike in bikes)
+         {
+            VehicleGroupBox newBox = new VehicleGroupBox(bike);
+            bikeGroupBoxes.Add(newBox);
+         }
+         RefreshVehicleDisplay();
+      }
+
+      private void CarsRemoved(Vehicle[] cars)
+      {
+         foreach(Vehicle car in cars)
+         {
+            for(int i = 0; i < carGroupBoxes.Count; i++)
+            {
+               if(car.ID == carGroupBoxes[i].CarID)
+               {
+                  carGroupBoxes[i].Dispose();
+                  carGroupBoxes.RemoveAt(i);
+                  break;
+               }
+            }
+         }
+         RefreshVehicleDisplay();
+      }
+
+      private void BikesRemoved(Vehicle[] bikes)
+      {
+         foreach(Vehicle bike in bikes)
+         {
+            for(int i = 0; i < bikeGroupBoxes.Count; i++)
+            {
+               if(bike.ID == bikeGroupBoxes[i].CarID)
+               {
+                  bikeGroupBoxes[i].Dispose();
+                  bikeGroupBoxes.RemoveAt(i);
+                  break;
+               }
+            }
+         }
+         RefreshVehicleDisplay();
+      }
+      
+      //----------------------------------------------------------------------------------------------------------------
+      
+      private void RefreshVehicleDisplay()
+      {
+         vehicleDisplayPanel.Controls.Clear();
+         
+         switch(showType)
+         {
+            case VehicleShowType.All:
+               foreach(VehicleGroupBox carGroupBox in carGroupBoxes)
+                  vehicleDisplayPanel.Controls.Add(carGroupBox);
+               
+               foreach(VehicleGroupBox bikeGroupBox in bikeGroupBoxes)
+                  vehicleDisplayPanel.Controls.Add(bikeGroupBox);
+               break;
+            case VehicleShowType.Car:
+               foreach(VehicleGroupBox carGroupBox in carGroupBoxes)
+                  vehicleDisplayPanel.Controls.Add(carGroupBox);
+               
+               foreach(VehicleGroupBox bikeGroupBox in bikeGroupBoxes)
+                  vehicleDisplayPanel.Controls.Remove(bikeGroupBox);
+               break;
+            case VehicleShowType.Bike:
+               foreach(VehicleGroupBox carGroupBox in carGroupBoxes)
+                  vehicleDisplayPanel.Controls.Remove(carGroupBox);
+               
+               foreach(VehicleGroupBox bikeGroupBox in bikeGroupBoxes)
+                  vehicleDisplayPanel.Controls.Add(bikeGroupBox);
+               break;
+         }
+      }
+
+      private void InitVehicleSearchComboBox()
+      {
+         string[] data = new string[3];
+         data[0] = "All";
+         data[1] = "Car";
+         data[2] = "Bike";
+         vehicleSearchComboBox.DataSource = data;
+      }
+      
+      private enum VehicleShowType
+      {
+         All,
+         Car,
+         Bike
+      }
+      
       #endregion
       
       #region Extra Utilty

@@ -97,11 +97,11 @@ namespace ParkhouseSimulation.Backend
          return count;
       }
       
-      public bool FindFreeParkingSlotFor(Vehicle vehicle, out ParkingSlot slot)
+      public bool FindFreeParkingSlotFor(VehicleType type, out ParkingSlot slot)
       {
          foreach(ParkingSlot parkingSlot in slots)
          {
-            if(parkingSlot.Free && parkingSlot.Type == vehicle.Type)
+            if(parkingSlot.Free && parkingSlot.Type == type)
             {
                slot = parkingSlot;
                return true;
@@ -111,17 +111,18 @@ namespace ParkhouseSimulation.Backend
          return false;
       }
 
-      public bool RemoveVehicle(VehicleType type)
+      public Vehicle RemoveVehicle(VehicleType type)
       {
          for(int i = slots.Count - 1; i >= 0; i--)
          {
             if(!slots[i].Free && slots[i].Type == type)
             {
+               Vehicle vehicle = slots[i].Vehicle;
                slots[i].Vehicle = null;
-               return true;
+               return vehicle;
             }
          }
-         return false;
+         return null;
       }
    }
 }

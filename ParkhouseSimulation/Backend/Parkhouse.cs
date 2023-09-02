@@ -77,26 +77,30 @@ namespace ParkhouseSimulation.Backend
          return removedFloor;
       }
 
-      public void AddVehicle(VehicleType type)
+      public Vehicle AddVehicle(VehicleType type)
       {
-         Vehicle vehicle = new Vehicle(uniqueVehicleID.ToString(), type);
-         ParkingSlot slot = FindFreeSlotFor(vehicle);
+         ParkingSlot slot = FindFreeSlotFor(type);
          if(slot != null)
          {
+            Vehicle vehicle = new Vehicle(uniqueVehicleID.ToString(), type, slot.ParkingSlotID);
             slot.Vehicle = vehicle;
             uniqueVehicleID++;
+            return vehicle;
          }
+         return null;
       }
 
-      public void RemoveVehicle(VehicleType type)
+      public Vehicle RemoveVehicle(VehicleType type)
       {
          for(int i = Floors - 1; i >= 0; i--)
          {
-            if(floors[i].RemoveVehicle(type))
+            Vehicle vehicle = floors[i].RemoveVehicle(type);
+            if(vehicle != null)
             {
-               return;
-            }   
+               return vehicle;
+            }
          }
+         return null;
       }
 
       public int FreeParkingSlotCountForCars()
@@ -143,11 +147,11 @@ namespace ParkhouseSimulation.Backend
       public int GetCarSlotCount(Floor floor) => floor.CarSlots.Length;
       public int GetBikeSlotCount(Floor floor) => floor.BikeSlots.Length;
 
-      private ParkingSlot FindFreeSlotFor(Vehicle vehicle)
+      private ParkingSlot FindFreeSlotFor(VehicleType type)
       {
          foreach(Floor floor in floors)
          {
-            if(floor.FindFreeParkingSlotFor(vehicle, out ParkingSlot slot))
+            if(floor.FindFreeParkingSlotFor(type, out ParkingSlot slot))
             {
                return slot;
             }

@@ -88,13 +88,6 @@
          this.vehicleSearchComboBox = new System.Windows.Forms.ComboBox();
          this.vehicleSearchLabel = new System.Windows.Forms.Label();
          this.vehicleDisplayPanel = new System.Windows.Forms.FlowLayoutPanel();
-         this.templatePanel = new System.Windows.Forms.Panel();
-         this.templateIDPanel = new System.Windows.Forms.Panel();
-         this.templateIDDisplayLabel = new System.Windows.Forms.Label();
-         this.templateIDLabel = new System.Windows.Forms.Label();
-         this.templatePositionPanel = new System.Windows.Forms.Panel();
-         this.label1 = new System.Windows.Forms.Label();
-         this.templatePositionLabel = new System.Windows.Forms.Label();
          this.floorCreationTabControl.SuspendLayout();
          this.createParkhousePage.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.floorCreatePageBikesNumericUpDown)).BeginInit();
@@ -114,10 +107,6 @@
          this.statsOccupiedGroupBox.SuspendLayout();
          this.statsFreeGroupBox.SuspendLayout();
          this.statsTotalGroupBox.SuspendLayout();
-         this.vehicleDisplayPanel.SuspendLayout();
-         this.templatePanel.SuspendLayout();
-         this.templateIDPanel.SuspendLayout();
-         this.templatePositionPanel.SuspendLayout();
          this.SuspendLayout();
          // 
          // floorSelectionComboBox
@@ -125,7 +114,7 @@
          this.floorSelectionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
          this.floorSelectionComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.floorSelectionComboBox.FormattingEnabled = true;
-         this.floorSelectionComboBox.Location = new System.Drawing.Point(231, 21);
+         this.floorSelectionComboBox.Location = new System.Drawing.Point(273, 21);
          this.floorSelectionComboBox.Name = "floorSelectionComboBox";
          this.floorSelectionComboBox.Size = new System.Drawing.Size(172, 24);
          this.floorSelectionComboBox.TabIndex = 2;
@@ -139,7 +128,7 @@
          this.floorCreationTabControl.Location = new System.Drawing.Point(12, 12);
          this.floorCreationTabControl.Name = "floorCreationTabControl";
          this.floorCreationTabControl.SelectedIndex = 0;
-         this.floorCreationTabControl.Size = new System.Drawing.Size(197, 143);
+         this.floorCreationTabControl.Size = new System.Drawing.Size(242, 143);
          this.floorCreationTabControl.TabIndex = 3;
          this.floorCreationTabControl.SelectedIndexChanged += new System.EventHandler(this.FloorCreationTabControl_SelectedIndexChanged);
          // 
@@ -156,7 +145,7 @@
          this.createParkhousePage.Location = new System.Drawing.Point(4, 25);
          this.createParkhousePage.Name = "createParkhousePage";
          this.createParkhousePage.Padding = new System.Windows.Forms.Padding(3);
-         this.createParkhousePage.Size = new System.Drawing.Size(189, 114);
+         this.createParkhousePage.Size = new System.Drawing.Size(234, 114);
          this.createParkhousePage.TabIndex = 0;
          this.createParkhousePage.Text = "Create floor";
          // 
@@ -175,7 +164,7 @@
          this.floorCreatePageNameTextBox.Enabled = false;
          this.floorCreatePageNameTextBox.Location = new System.Drawing.Point(61, 10);
          this.floorCreatePageNameTextBox.Name = "floorCreatePageNameTextBox";
-         this.floorCreatePageNameTextBox.Size = new System.Drawing.Size(122, 22);
+         this.floorCreatePageNameTextBox.Size = new System.Drawing.Size(160, 22);
          this.floorCreatePageNameTextBox.TabIndex = 6;
          // 
          // floorCreatePageButton
@@ -184,7 +173,7 @@
          this.floorCreatePageButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.floorCreatePageButton.Location = new System.Drawing.Point(3, 88);
          this.floorCreatePageButton.Name = "floorCreatePageButton";
-         this.floorCreatePageButton.Size = new System.Drawing.Size(183, 23);
+         this.floorCreatePageButton.Size = new System.Drawing.Size(228, 23);
          this.floorCreatePageButton.TabIndex = 4;
          this.floorCreatePageButton.Text = "Create floor";
          this.floorCreatePageButton.UseVisualStyleBackColor = true;
@@ -194,7 +183,7 @@
          // 
          this.floorCreatePageBikesNumericUpDown.Location = new System.Drawing.Point(61, 64);
          this.floorCreatePageBikesNumericUpDown.Name = "floorCreatePageBikesNumericUpDown";
-         this.floorCreatePageBikesNumericUpDown.Size = new System.Drawing.Size(122, 22);
+         this.floorCreatePageBikesNumericUpDown.Size = new System.Drawing.Size(160, 22);
          this.floorCreatePageBikesNumericUpDown.TabIndex = 3;
          // 
          // floorCreatePageCarsNumericUpDown
@@ -202,7 +191,7 @@
          this.floorCreatePageCarsNumericUpDown.Location = new System.Drawing.Point(61, 37);
          this.floorCreatePageCarsNumericUpDown.Maximum = new decimal(new int[] {200, 0, 0, 0});
          this.floorCreatePageCarsNumericUpDown.Name = "floorCreatePageCarsNumericUpDown";
-         this.floorCreatePageCarsNumericUpDown.Size = new System.Drawing.Size(122, 22);
+         this.floorCreatePageCarsNumericUpDown.Size = new System.Drawing.Size(160, 22);
          this.floorCreatePageCarsNumericUpDown.TabIndex = 2;
          // 
          // floorCreatePageBikeLabel
@@ -237,7 +226,7 @@
          this.floorEditPage.Location = new System.Drawing.Point(4, 22);
          this.floorEditPage.Name = "floorEditPage";
          this.floorEditPage.Padding = new System.Windows.Forms.Padding(3);
-         this.floorEditPage.Size = new System.Drawing.Size(189, 117);
+         this.floorEditPage.Size = new System.Drawing.Size(234, 117);
          this.floorEditPage.TabIndex = 1;
          this.floorEditPage.Text = "Edit floor";
          // 
@@ -247,7 +236,7 @@
          this.floorEditPageButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.floorEditPageButton.Location = new System.Drawing.Point(3, 91);
          this.floorEditPageButton.Name = "floorEditPageButton";
-         this.floorEditPageButton.Size = new System.Drawing.Size(183, 23);
+         this.floorEditPageButton.Size = new System.Drawing.Size(228, 23);
          this.floorEditPageButton.TabIndex = 8;
          this.floorEditPageButton.Text = "Edit floor";
          this.floorEditPageButton.UseVisualStyleBackColor = true;
@@ -307,7 +296,7 @@
          this.floorRemovePage.Location = new System.Drawing.Point(4, 22);
          this.floorRemovePage.Name = "floorRemovePage";
          this.floorRemovePage.Padding = new System.Windows.Forms.Padding(3);
-         this.floorRemovePage.Size = new System.Drawing.Size(189, 117);
+         this.floorRemovePage.Size = new System.Drawing.Size(234, 117);
          this.floorRemovePage.TabIndex = 2;
          this.floorRemovePage.Text = "Remove floor";
          // 
@@ -317,7 +306,7 @@
          this.floorRemovePageButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.floorRemovePageButton.Location = new System.Drawing.Point(3, 91);
          this.floorRemovePageButton.Name = "floorRemovePageButton";
-         this.floorRemovePageButton.Size = new System.Drawing.Size(183, 23);
+         this.floorRemovePageButton.Size = new System.Drawing.Size(228, 23);
          this.floorRemovePageButton.TabIndex = 14;
          this.floorRemovePageButton.Text = "Remove floor";
          this.floorRemovePageButton.UseVisualStyleBackColor = true;
@@ -337,7 +326,7 @@
          // floorDisplayPanel
          // 
          this.floorDisplayPanel.BackColor = System.Drawing.Color.DimGray;
-         this.floorDisplayPanel.Location = new System.Drawing.Point(231, 51);
+         this.floorDisplayPanel.Location = new System.Drawing.Point(273, 51);
          this.floorDisplayPanel.Name = "floorDisplayPanel";
          this.floorDisplayPanel.Size = new System.Drawing.Size(547, 567);
          this.floorDisplayPanel.TabIndex = 4;
@@ -349,7 +338,7 @@
          this.driveInOutTabControl.Location = new System.Drawing.Point(12, 175);
          this.driveInOutTabControl.Name = "driveInOutTabControl";
          this.driveInOutTabControl.SelectedIndex = 0;
-         this.driveInOutTabControl.Size = new System.Drawing.Size(197, 116);
+         this.driveInOutTabControl.Size = new System.Drawing.Size(242, 116);
          this.driveInOutTabControl.TabIndex = 5;
          this.driveInOutTabControl.SelectedIndexChanged += new System.EventHandler(this.DriveInOutTabControl_SelectedIndexChanged);
          // 
@@ -364,7 +353,7 @@
          this.driveInPage.Location = new System.Drawing.Point(4, 25);
          this.driveInPage.Name = "driveInPage";
          this.driveInPage.Padding = new System.Windows.Forms.Padding(3);
-         this.driveInPage.Size = new System.Drawing.Size(189, 87);
+         this.driveInPage.Size = new System.Drawing.Size(234, 87);
          this.driveInPage.TabIndex = 0;
          this.driveInPage.Text = "Drive in";
          // 
@@ -374,7 +363,7 @@
          this.driveInButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.driveInButton.Location = new System.Drawing.Point(3, 61);
          this.driveInButton.Name = "driveInButton";
-         this.driveInButton.Size = new System.Drawing.Size(183, 23);
+         this.driveInButton.Size = new System.Drawing.Size(228, 23);
          this.driveInButton.TabIndex = 9;
          this.driveInButton.Text = "Enter parkhouse";
          this.driveInButton.UseVisualStyleBackColor = true;
@@ -384,7 +373,7 @@
          // 
          this.driveInBikesNumericUpDown.Location = new System.Drawing.Point(59, 36);
          this.driveInBikesNumericUpDown.Name = "driveInBikesNumericUpDown";
-         this.driveInBikesNumericUpDown.Size = new System.Drawing.Size(122, 22);
+         this.driveInBikesNumericUpDown.Size = new System.Drawing.Size(162, 22);
          this.driveInBikesNumericUpDown.TabIndex = 8;
          this.driveInBikesNumericUpDown.Leave += new System.EventHandler(this.DriveInBikesNumericUpDown_Leave);
          // 
@@ -393,7 +382,7 @@
          this.driveInCarsNumericUpDown.Location = new System.Drawing.Point(59, 9);
          this.driveInCarsNumericUpDown.Maximum = new decimal(new int[] {200, 0, 0, 0});
          this.driveInCarsNumericUpDown.Name = "driveInCarsNumericUpDown";
-         this.driveInCarsNumericUpDown.Size = new System.Drawing.Size(122, 22);
+         this.driveInCarsNumericUpDown.Size = new System.Drawing.Size(162, 22);
          this.driveInCarsNumericUpDown.TabIndex = 7;
          this.driveInCarsNumericUpDown.Leave += new System.EventHandler(this.DriveInCarsNumericUpDown_Leave);
          // 
@@ -428,7 +417,7 @@
          this.driveOutPage.Location = new System.Drawing.Point(4, 22);
          this.driveOutPage.Name = "driveOutPage";
          this.driveOutPage.Padding = new System.Windows.Forms.Padding(3);
-         this.driveOutPage.Size = new System.Drawing.Size(189, 90);
+         this.driveOutPage.Size = new System.Drawing.Size(234, 90);
          this.driveOutPage.TabIndex = 1;
          this.driveOutPage.Text = "Drive out";
          // 
@@ -438,7 +427,7 @@
          this.driveOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.driveOutButton.Location = new System.Drawing.Point(3, 64);
          this.driveOutButton.Name = "driveOutButton";
-         this.driveOutButton.Size = new System.Drawing.Size(183, 23);
+         this.driveOutButton.Size = new System.Drawing.Size(228, 23);
          this.driveOutButton.TabIndex = 14;
          this.driveOutButton.Text = "Exit parkhouse";
          this.driveOutButton.UseVisualStyleBackColor = true;
@@ -489,7 +478,7 @@
          this.statsGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.statsGroupBox.Location = new System.Drawing.Point(12, 308);
          this.statsGroupBox.Name = "statsGroupBox";
-         this.statsGroupBox.Size = new System.Drawing.Size(197, 310);
+         this.statsGroupBox.Size = new System.Drawing.Size(242, 310);
          this.statsGroupBox.TabIndex = 6;
          this.statsGroupBox.TabStop = false;
          this.statsGroupBox.Text = "Parkhouse stats";
@@ -503,7 +492,7 @@
          this.statsOccupiedGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.statsOccupiedGroupBox.Location = new System.Drawing.Point(6, 235);
          this.statsOccupiedGroupBox.Name = "statsOccupiedGroupBox";
-         this.statsOccupiedGroupBox.Size = new System.Drawing.Size(185, 68);
+         this.statsOccupiedGroupBox.Size = new System.Drawing.Size(229, 68);
          this.statsOccupiedGroupBox.TabIndex = 11;
          this.statsOccupiedGroupBox.TabStop = false;
          this.statsOccupiedGroupBox.Text = "Occupied";
@@ -515,7 +504,7 @@
          this.statsOccupiedBikeSlotsTextbox.Location = new System.Drawing.Point(92, 41);
          this.statsOccupiedBikeSlotsTextbox.Name = "statsOccupiedBikeSlotsTextbox";
          this.statsOccupiedBikeSlotsTextbox.ReadOnly = true;
-         this.statsOccupiedBikeSlotsTextbox.Size = new System.Drawing.Size(87, 22);
+         this.statsOccupiedBikeSlotsTextbox.Size = new System.Drawing.Size(131, 22);
          this.statsOccupiedBikeSlotsTextbox.TabIndex = 13;
          // 
          // statsOccupiedCarSlotsLabel
@@ -535,7 +524,7 @@
          this.statsOccupiedCarSlotsTextbox.Location = new System.Drawing.Point(92, 21);
          this.statsOccupiedCarSlotsTextbox.Name = "statsOccupiedCarSlotsTextbox";
          this.statsOccupiedCarSlotsTextbox.ReadOnly = true;
-         this.statsOccupiedCarSlotsTextbox.Size = new System.Drawing.Size(87, 22);
+         this.statsOccupiedCarSlotsTextbox.Size = new System.Drawing.Size(131, 22);
          this.statsOccupiedCarSlotsTextbox.TabIndex = 14;
          // 
          // statsOccupiedBikeSlotsLabel
@@ -557,7 +546,7 @@
          this.statsFreeGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.statsFreeGroupBox.Location = new System.Drawing.Point(6, 161);
          this.statsFreeGroupBox.Name = "statsFreeGroupBox";
-         this.statsFreeGroupBox.Size = new System.Drawing.Size(185, 68);
+         this.statsFreeGroupBox.Size = new System.Drawing.Size(229, 68);
          this.statsFreeGroupBox.TabIndex = 10;
          this.statsFreeGroupBox.TabStop = false;
          this.statsFreeGroupBox.Text = "Free";
@@ -569,7 +558,7 @@
          this.statsFreeBikeSlotsTextbox.Location = new System.Drawing.Point(92, 41);
          this.statsFreeBikeSlotsTextbox.Name = "statsFreeBikeSlotsTextbox";
          this.statsFreeBikeSlotsTextbox.ReadOnly = true;
-         this.statsFreeBikeSlotsTextbox.Size = new System.Drawing.Size(87, 22);
+         this.statsFreeBikeSlotsTextbox.Size = new System.Drawing.Size(131, 22);
          this.statsFreeBikeSlotsTextbox.TabIndex = 13;
          // 
          // statsFreeCarSlotsTextbox
@@ -579,7 +568,7 @@
          this.statsFreeCarSlotsTextbox.Location = new System.Drawing.Point(92, 21);
          this.statsFreeCarSlotsTextbox.Name = "statsFreeCarSlotsTextbox";
          this.statsFreeCarSlotsTextbox.ReadOnly = true;
-         this.statsFreeCarSlotsTextbox.Size = new System.Drawing.Size(87, 22);
+         this.statsFreeCarSlotsTextbox.Size = new System.Drawing.Size(131, 22);
          this.statsFreeCarSlotsTextbox.TabIndex = 14;
          // 
          // statsFreeCarSlotsLabel
@@ -617,7 +606,7 @@
          this.statsTotalGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.statsTotalGroupBox.Location = new System.Drawing.Point(6, 28);
          this.statsTotalGroupBox.Name = "statsTotalGroupBox";
-         this.statsTotalGroupBox.Size = new System.Drawing.Size(185, 127);
+         this.statsTotalGroupBox.Size = new System.Drawing.Size(229, 127);
          this.statsTotalGroupBox.TabIndex = 9;
          this.statsTotalGroupBox.TabStop = false;
          this.statsTotalGroupBox.Text = "Total";
@@ -629,7 +618,7 @@
          this.statsTotalBikeSlotsTextbox.Location = new System.Drawing.Point(92, 101);
          this.statsTotalBikeSlotsTextbox.Name = "statsTotalBikeSlotsTextbox";
          this.statsTotalBikeSlotsTextbox.ReadOnly = true;
-         this.statsTotalBikeSlotsTextbox.Size = new System.Drawing.Size(87, 22);
+         this.statsTotalBikeSlotsTextbox.Size = new System.Drawing.Size(131, 22);
          this.statsTotalBikeSlotsTextbox.TabIndex = 11;
          // 
          // statsTotalCarSlotsTextbox
@@ -639,7 +628,7 @@
          this.statsTotalCarSlotsTextbox.Location = new System.Drawing.Point(92, 81);
          this.statsTotalCarSlotsTextbox.Name = "statsTotalCarSlotsTextbox";
          this.statsTotalCarSlotsTextbox.ReadOnly = true;
-         this.statsTotalCarSlotsTextbox.Size = new System.Drawing.Size(87, 22);
+         this.statsTotalCarSlotsTextbox.Size = new System.Drawing.Size(131, 22);
          this.statsTotalCarSlotsTextbox.TabIndex = 12;
          // 
          // statsTotalBikesTextbox
@@ -649,7 +638,7 @@
          this.statsTotalBikesTextbox.Location = new System.Drawing.Point(92, 61);
          this.statsTotalBikesTextbox.Name = "statsTotalBikesTextbox";
          this.statsTotalBikesTextbox.ReadOnly = true;
-         this.statsTotalBikesTextbox.Size = new System.Drawing.Size(87, 22);
+         this.statsTotalBikesTextbox.Size = new System.Drawing.Size(131, 22);
          this.statsTotalBikesTextbox.TabIndex = 11;
          // 
          // statsTotalCarsTextbox
@@ -659,7 +648,7 @@
          this.statsTotalCarsTextbox.Location = new System.Drawing.Point(92, 41);
          this.statsTotalCarsTextbox.Name = "statsTotalCarsTextbox";
          this.statsTotalCarsTextbox.ReadOnly = true;
-         this.statsTotalCarsTextbox.Size = new System.Drawing.Size(87, 22);
+         this.statsTotalCarsTextbox.Size = new System.Drawing.Size(131, 22);
          this.statsTotalCarsTextbox.TabIndex = 10;
          // 
          // statsTotalFloorsTextbox
@@ -669,7 +658,7 @@
          this.statsTotalFloorsTextbox.Location = new System.Drawing.Point(92, 21);
          this.statsTotalFloorsTextbox.Name = "statsTotalFloorsTextbox";
          this.statsTotalFloorsTextbox.ReadOnly = true;
-         this.statsTotalFloorsTextbox.Size = new System.Drawing.Size(87, 22);
+         this.statsTotalFloorsTextbox.Size = new System.Drawing.Size(131, 22);
          this.statsTotalFloorsTextbox.TabIndex = 9;
          // 
          // statsTotalFloorsLabel
@@ -727,16 +716,17 @@
          this.vehicleSearchComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
          this.vehicleSearchComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.vehicleSearchComboBox.FormattingEnabled = true;
-         this.vehicleSearchComboBox.Location = new System.Drawing.Point(853, 18);
+         this.vehicleSearchComboBox.Location = new System.Drawing.Point(886, 18);
          this.vehicleSearchComboBox.Name = "vehicleSearchComboBox";
-         this.vehicleSearchComboBox.Size = new System.Drawing.Size(169, 24);
+         this.vehicleSearchComboBox.Size = new System.Drawing.Size(132, 24);
          this.vehicleSearchComboBox.TabIndex = 7;
+         this.vehicleSearchComboBox.SelectedIndexChanged += new System.EventHandler(this.VehicleSearchComboBox_SelectedIndexChanged);
          // 
          // vehicleSearchLabel
          // 
          this.vehicleSearchLabel.AutoSize = true;
          this.vehicleSearchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.vehicleSearchLabel.Location = new System.Drawing.Point(784, 18);
+         this.vehicleSearchLabel.Location = new System.Drawing.Point(826, 18);
          this.vehicleSearchLabel.Name = "vehicleSearchLabel";
          this.vehicleSearchLabel.Size = new System.Drawing.Size(63, 24);
          this.vehicleSearchLabel.TabIndex = 8;
@@ -744,85 +734,19 @@
          // 
          // vehicleDisplayPanel
          // 
+         this.vehicleDisplayPanel.AutoScroll = true;
          this.vehicleDisplayPanel.BackColor = System.Drawing.Color.DimGray;
-         this.vehicleDisplayPanel.Controls.Add(this.templatePanel);
-         this.vehicleDisplayPanel.Location = new System.Drawing.Point(784, 51);
+         this.vehicleDisplayPanel.Location = new System.Drawing.Point(826, 51);
          this.vehicleDisplayPanel.Name = "vehicleDisplayPanel";
          this.vehicleDisplayPanel.Padding = new System.Windows.Forms.Padding(5);
-         this.vehicleDisplayPanel.Size = new System.Drawing.Size(240, 567);
+         this.vehicleDisplayPanel.Size = new System.Drawing.Size(192, 567);
          this.vehicleDisplayPanel.TabIndex = 9;
-         // 
-         // templatePanel
-         // 
-         this.templatePanel.BackColor = System.Drawing.Color.Gray;
-         this.templatePanel.Controls.Add(this.templatePositionPanel);
-         this.templatePanel.Controls.Add(this.templateIDPanel);
-         this.templatePanel.Location = new System.Drawing.Point(8, 8);
-         this.templatePanel.Name = "templatePanel";
-         this.templatePanel.Size = new System.Drawing.Size(220, 30);
-         this.templatePanel.TabIndex = 0;
-         // 
-         // templateIDPanel
-         // 
-         this.templateIDPanel.Controls.Add(this.templateIDDisplayLabel);
-         this.templateIDPanel.Controls.Add(this.templateIDLabel);
-         this.templateIDPanel.Location = new System.Drawing.Point(0, 0);
-         this.templateIDPanel.Name = "templateIDPanel";
-         this.templateIDPanel.Size = new System.Drawing.Size(84, 30);
-         this.templateIDPanel.TabIndex = 1;
-         // 
-         // templateIDDisplayLabel
-         // 
-         this.templateIDDisplayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.templateIDDisplayLabel.Location = new System.Drawing.Point(32, 5);
-         this.templateIDDisplayLabel.Name = "templateIDDisplayLabel";
-         this.templateIDDisplayLabel.Size = new System.Drawing.Size(49, 20);
-         this.templateIDDisplayLabel.TabIndex = 1;
-         this.templateIDDisplayLabel.Text = "1";
-         // 
-         // templateIDLabel
-         // 
-         this.templateIDLabel.AutoSize = true;
-         this.templateIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.templateIDLabel.Location = new System.Drawing.Point(5, 5);
-         this.templateIDLabel.Name = "templateIDLabel";
-         this.templateIDLabel.Size = new System.Drawing.Size(30, 20);
-         this.templateIDLabel.TabIndex = 0;
-         this.templateIDLabel.Text = "ID:";
-         // 
-         // templatePositionPanel
-         // 
-         this.templatePositionPanel.Controls.Add(this.label1);
-         this.templatePositionPanel.Controls.Add(this.templatePositionLabel);
-         this.templatePositionPanel.Location = new System.Drawing.Point(82, 0);
-         this.templatePositionPanel.Name = "templatePositionPanel";
-         this.templatePositionPanel.Size = new System.Drawing.Size(138, 30);
-         this.templatePositionPanel.TabIndex = 2;
-         // 
-         // label1
-         // 
-         this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label1.Location = new System.Drawing.Point(71, 5);
-         this.label1.Name = "label1";
-         this.label1.Size = new System.Drawing.Size(64, 20);
-         this.label1.TabIndex = 1;
-         this.label1.Text = "A0";
-         // 
-         // templatePositionLabel
-         // 
-         this.templatePositionLabel.AutoSize = true;
-         this.templatePositionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.templatePositionLabel.Location = new System.Drawing.Point(5, 5);
-         this.templatePositionLabel.Name = "templatePositionLabel";
-         this.templatePositionLabel.Size = new System.Drawing.Size(69, 20);
-         this.templatePositionLabel.TabIndex = 0;
-         this.templatePositionLabel.Text = "Position:";
          // 
          // MainForm
          // 
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
          this.BackColor = System.Drawing.Color.Gray;
-         this.ClientSize = new System.Drawing.Size(1034, 629);
+         this.ClientSize = new System.Drawing.Size(1029, 629);
          this.Controls.Add(this.vehicleDisplayPanel);
          this.Controls.Add(this.vehicleSearchLabel);
          this.Controls.Add(this.vehicleSearchComboBox);
@@ -833,8 +757,8 @@
          this.Controls.Add(this.floorSelectionComboBox);
          this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.Location = new System.Drawing.Point(15, 15);
-         this.MaximumSize = new System.Drawing.Size(1050, 668);
-         this.MinimumSize = new System.Drawing.Size(1050, 668);
+         this.MaximumSize = new System.Drawing.Size(1045, 668);
+         this.MinimumSize = new System.Drawing.Size(1045, 668);
          this.Name = "MainForm";
          this.RightToLeftLayout = true;
          this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -865,27 +789,10 @@
          this.statsFreeGroupBox.PerformLayout();
          this.statsTotalGroupBox.ResumeLayout(false);
          this.statsTotalGroupBox.PerformLayout();
-         this.vehicleDisplayPanel.ResumeLayout(false);
-         this.templatePanel.ResumeLayout(false);
-         this.templateIDPanel.ResumeLayout(false);
-         this.templateIDPanel.PerformLayout();
-         this.templatePositionPanel.ResumeLayout(false);
-         this.templatePositionPanel.PerformLayout();
          this.ResumeLayout(false);
          this.PerformLayout();
       }
 
-      private System.Windows.Forms.Panel templatePositionPanel;
-      private System.Windows.Forms.Label label1;
-      private System.Windows.Forms.Label templatePositionLabel;
-
-      private System.Windows.Forms.Label templateIDLabel;
-
-      private System.Windows.Forms.Label templateIDDisplayLabel;
-
-
-      private System.Windows.Forms.Panel templateIDPanel;
-      private System.Windows.Forms.Panel templatePanel;
 
       private System.Windows.Forms.FlowLayoutPanel vehicleDisplayPanel;
 
