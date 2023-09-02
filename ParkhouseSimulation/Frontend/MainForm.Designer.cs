@@ -63,6 +63,28 @@
          this.driveOutCarsNumericUpDown = new System.Windows.Forms.NumericUpDown();
          this.driveOutBikesLabel = new System.Windows.Forms.Label();
          this.driveOutCarsLabel = new System.Windows.Forms.Label();
+         this.statsGroupBox = new System.Windows.Forms.GroupBox();
+         this.statsOccupiedGroupBox = new System.Windows.Forms.GroupBox();
+         this.statsOccupiedBikeSlotsTextbox = new System.Windows.Forms.TextBox();
+         this.statsOccupiedCarSlotsLabel = new System.Windows.Forms.Label();
+         this.statsOccupiedCarSlotsTextbox = new System.Windows.Forms.TextBox();
+         this.statsOccupiedBikeSlotsLabel = new System.Windows.Forms.Label();
+         this.statsFreeGroupBox = new System.Windows.Forms.GroupBox();
+         this.statsFreeBikeSlotsTextbox = new System.Windows.Forms.TextBox();
+         this.statsFreeCarSlotsTextbox = new System.Windows.Forms.TextBox();
+         this.statsFreeCarSlotsLabel = new System.Windows.Forms.Label();
+         this.statsFreeBikeSlotsLabel = new System.Windows.Forms.Label();
+         this.statsTotalGroupBox = new System.Windows.Forms.GroupBox();
+         this.statsTotalBikeSlotsTextbox = new System.Windows.Forms.TextBox();
+         this.statsTotalCarSlotsTextbox = new System.Windows.Forms.TextBox();
+         this.statsTotalBikesTextbox = new System.Windows.Forms.TextBox();
+         this.statsTotalCarsTextbox = new System.Windows.Forms.TextBox();
+         this.statsTotalFloorsTextbox = new System.Windows.Forms.TextBox();
+         this.statsTotalFloorsLabel = new System.Windows.Forms.Label();
+         this.statsTotalBikeSlotsLabel = new System.Windows.Forms.Label();
+         this.statsTotalCarsLabel = new System.Windows.Forms.Label();
+         this.statsTotalCarSlotsLabel = new System.Windows.Forms.Label();
+         this.statsTotalBikesLabel = new System.Windows.Forms.Label();
          this.floorCreationTabControl.SuspendLayout();
          this.createParkhousePage.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.floorCreatePageBikesNumericUpDown)).BeginInit();
@@ -78,6 +100,10 @@
          this.driveOutPage.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.driveOutBikesNumericUpDown)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.driveOutCarsNumericUpDown)).BeginInit();
+         this.statsGroupBox.SuspendLayout();
+         this.statsOccupiedGroupBox.SuspendLayout();
+         this.statsFreeGroupBox.SuspendLayout();
+         this.statsTotalGroupBox.SuspendLayout();
          this.SuspendLayout();
          // 
          // floorSelectionComboBox
@@ -85,7 +111,7 @@
          this.floorSelectionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
          this.floorSelectionComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.floorSelectionComboBox.FormattingEnabled = true;
-         this.floorSelectionComboBox.Location = new System.Drawing.Point(215, 19);
+         this.floorSelectionComboBox.Location = new System.Drawing.Point(246, 19);
          this.floorSelectionComboBox.Name = "floorSelectionComboBox";
          this.floorSelectionComboBox.Size = new System.Drawing.Size(172, 24);
          this.floorSelectionComboBox.TabIndex = 2;
@@ -297,9 +323,9 @@
          // floorDisplayPanel
          // 
          this.floorDisplayPanel.BackColor = System.Drawing.Color.DimGray;
-         this.floorDisplayPanel.Location = new System.Drawing.Point(215, 51);
+         this.floorDisplayPanel.Location = new System.Drawing.Point(246, 51);
          this.floorDisplayPanel.Name = "floorDisplayPanel";
-         this.floorDisplayPanel.Size = new System.Drawing.Size(547, 498);
+         this.floorDisplayPanel.Size = new System.Drawing.Size(547, 567);
          this.floorDisplayPanel.TabIndex = 4;
          // 
          // driveInOutTabControl
@@ -441,21 +467,264 @@
          this.driveOutCarsLabel.TabIndex = 10;
          this.driveOutCarsLabel.Text = "Cars:";
          // 
+         // statsGroupBox
+         // 
+         this.statsGroupBox.Controls.Add(this.statsOccupiedGroupBox);
+         this.statsGroupBox.Controls.Add(this.statsFreeGroupBox);
+         this.statsGroupBox.Controls.Add(this.statsTotalGroupBox);
+         this.statsGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsGroupBox.Location = new System.Drawing.Point(12, 308);
+         this.statsGroupBox.Name = "statsGroupBox";
+         this.statsGroupBox.Size = new System.Drawing.Size(228, 310);
+         this.statsGroupBox.TabIndex = 6;
+         this.statsGroupBox.TabStop = false;
+         this.statsGroupBox.Text = "Parkhouse stats";
+         // 
+         // statsOccupiedGroupBox
+         // 
+         this.statsOccupiedGroupBox.Controls.Add(this.statsOccupiedBikeSlotsTextbox);
+         this.statsOccupiedGroupBox.Controls.Add(this.statsOccupiedCarSlotsLabel);
+         this.statsOccupiedGroupBox.Controls.Add(this.statsOccupiedCarSlotsTextbox);
+         this.statsOccupiedGroupBox.Controls.Add(this.statsOccupiedBikeSlotsLabel);
+         this.statsOccupiedGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsOccupiedGroupBox.Location = new System.Drawing.Point(6, 235);
+         this.statsOccupiedGroupBox.Name = "statsOccupiedGroupBox";
+         this.statsOccupiedGroupBox.Size = new System.Drawing.Size(216, 68);
+         this.statsOccupiedGroupBox.TabIndex = 11;
+         this.statsOccupiedGroupBox.TabStop = false;
+         this.statsOccupiedGroupBox.Text = "Occupied";
+         // 
+         // statsOccupiedBikeSlotsTextbox
+         // 
+         this.statsOccupiedBikeSlotsTextbox.BackColor = System.Drawing.SystemColors.ScrollBar;
+         this.statsOccupiedBikeSlotsTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsOccupiedBikeSlotsTextbox.Location = new System.Drawing.Point(92, 41);
+         this.statsOccupiedBikeSlotsTextbox.Name = "statsOccupiedBikeSlotsTextbox";
+         this.statsOccupiedBikeSlotsTextbox.ReadOnly = true;
+         this.statsOccupiedBikeSlotsTextbox.Size = new System.Drawing.Size(118, 22);
+         this.statsOccupiedBikeSlotsTextbox.TabIndex = 13;
+         // 
+         // statsOccupiedCarSlotsLabel
+         // 
+         this.statsOccupiedCarSlotsLabel.AutoSize = true;
+         this.statsOccupiedCarSlotsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsOccupiedCarSlotsLabel.Location = new System.Drawing.Point(5, 22);
+         this.statsOccupiedCarSlotsLabel.Name = "statsOccupiedCarSlotsLabel";
+         this.statsOccupiedCarSlotsLabel.Size = new System.Drawing.Size(80, 18);
+         this.statsOccupiedCarSlotsLabel.TabIndex = 3;
+         this.statsOccupiedCarSlotsLabel.Text = "Cars slots:";
+         // 
+         // statsOccupiedCarSlotsTextbox
+         // 
+         this.statsOccupiedCarSlotsTextbox.BackColor = System.Drawing.SystemColors.ScrollBar;
+         this.statsOccupiedCarSlotsTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsOccupiedCarSlotsTextbox.Location = new System.Drawing.Point(92, 21);
+         this.statsOccupiedCarSlotsTextbox.Name = "statsOccupiedCarSlotsTextbox";
+         this.statsOccupiedCarSlotsTextbox.ReadOnly = true;
+         this.statsOccupiedCarSlotsTextbox.Size = new System.Drawing.Size(118, 22);
+         this.statsOccupiedCarSlotsTextbox.TabIndex = 14;
+         // 
+         // statsOccupiedBikeSlotsLabel
+         // 
+         this.statsOccupiedBikeSlotsLabel.AutoSize = true;
+         this.statsOccupiedBikeSlotsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsOccupiedBikeSlotsLabel.Location = new System.Drawing.Point(5, 42);
+         this.statsOccupiedBikeSlotsLabel.Name = "statsOccupiedBikeSlotsLabel";
+         this.statsOccupiedBikeSlotsLabel.Size = new System.Drawing.Size(77, 18);
+         this.statsOccupiedBikeSlotsLabel.TabIndex = 4;
+         this.statsOccupiedBikeSlotsLabel.Text = "Bike slots:";
+         // 
+         // statsFreeGroupBox
+         // 
+         this.statsFreeGroupBox.Controls.Add(this.statsFreeBikeSlotsTextbox);
+         this.statsFreeGroupBox.Controls.Add(this.statsFreeCarSlotsTextbox);
+         this.statsFreeGroupBox.Controls.Add(this.statsFreeCarSlotsLabel);
+         this.statsFreeGroupBox.Controls.Add(this.statsFreeBikeSlotsLabel);
+         this.statsFreeGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsFreeGroupBox.Location = new System.Drawing.Point(6, 161);
+         this.statsFreeGroupBox.Name = "statsFreeGroupBox";
+         this.statsFreeGroupBox.Size = new System.Drawing.Size(216, 68);
+         this.statsFreeGroupBox.TabIndex = 10;
+         this.statsFreeGroupBox.TabStop = false;
+         this.statsFreeGroupBox.Text = "Free";
+         // 
+         // statsFreeBikeSlotsTextbox
+         // 
+         this.statsFreeBikeSlotsTextbox.BackColor = System.Drawing.SystemColors.ScrollBar;
+         this.statsFreeBikeSlotsTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsFreeBikeSlotsTextbox.Location = new System.Drawing.Point(92, 41);
+         this.statsFreeBikeSlotsTextbox.Name = "statsFreeBikeSlotsTextbox";
+         this.statsFreeBikeSlotsTextbox.ReadOnly = true;
+         this.statsFreeBikeSlotsTextbox.Size = new System.Drawing.Size(118, 22);
+         this.statsFreeBikeSlotsTextbox.TabIndex = 13;
+         // 
+         // statsFreeCarSlotsTextbox
+         // 
+         this.statsFreeCarSlotsTextbox.BackColor = System.Drawing.SystemColors.ScrollBar;
+         this.statsFreeCarSlotsTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsFreeCarSlotsTextbox.Location = new System.Drawing.Point(92, 21);
+         this.statsFreeCarSlotsTextbox.Name = "statsFreeCarSlotsTextbox";
+         this.statsFreeCarSlotsTextbox.ReadOnly = true;
+         this.statsFreeCarSlotsTextbox.Size = new System.Drawing.Size(118, 22);
+         this.statsFreeCarSlotsTextbox.TabIndex = 14;
+         // 
+         // statsFreeCarSlotsLabel
+         // 
+         this.statsFreeCarSlotsLabel.AutoSize = true;
+         this.statsFreeCarSlotsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsFreeCarSlotsLabel.Location = new System.Drawing.Point(5, 22);
+         this.statsFreeCarSlotsLabel.Name = "statsFreeCarSlotsLabel";
+         this.statsFreeCarSlotsLabel.Size = new System.Drawing.Size(80, 18);
+         this.statsFreeCarSlotsLabel.TabIndex = 3;
+         this.statsFreeCarSlotsLabel.Text = "Cars slots:";
+         // 
+         // statsFreeBikeSlotsLabel
+         // 
+         this.statsFreeBikeSlotsLabel.AutoSize = true;
+         this.statsFreeBikeSlotsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsFreeBikeSlotsLabel.Location = new System.Drawing.Point(5, 42);
+         this.statsFreeBikeSlotsLabel.Name = "statsFreeBikeSlotsLabel";
+         this.statsFreeBikeSlotsLabel.Size = new System.Drawing.Size(77, 18);
+         this.statsFreeBikeSlotsLabel.TabIndex = 4;
+         this.statsFreeBikeSlotsLabel.Text = "Bike slots:";
+         // 
+         // statsTotalGroupBox
+         // 
+         this.statsTotalGroupBox.Controls.Add(this.statsTotalBikeSlotsTextbox);
+         this.statsTotalGroupBox.Controls.Add(this.statsTotalCarSlotsTextbox);
+         this.statsTotalGroupBox.Controls.Add(this.statsTotalBikesTextbox);
+         this.statsTotalGroupBox.Controls.Add(this.statsTotalCarsTextbox);
+         this.statsTotalGroupBox.Controls.Add(this.statsTotalFloorsTextbox);
+         this.statsTotalGroupBox.Controls.Add(this.statsTotalFloorsLabel);
+         this.statsTotalGroupBox.Controls.Add(this.statsTotalBikeSlotsLabel);
+         this.statsTotalGroupBox.Controls.Add(this.statsTotalCarsLabel);
+         this.statsTotalGroupBox.Controls.Add(this.statsTotalCarSlotsLabel);
+         this.statsTotalGroupBox.Controls.Add(this.statsTotalBikesLabel);
+         this.statsTotalGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsTotalGroupBox.Location = new System.Drawing.Point(6, 28);
+         this.statsTotalGroupBox.Name = "statsTotalGroupBox";
+         this.statsTotalGroupBox.Size = new System.Drawing.Size(216, 127);
+         this.statsTotalGroupBox.TabIndex = 9;
+         this.statsTotalGroupBox.TabStop = false;
+         this.statsTotalGroupBox.Text = "Total";
+         // 
+         // statsTotalBikeSlotsTextbox
+         // 
+         this.statsTotalBikeSlotsTextbox.BackColor = System.Drawing.SystemColors.ScrollBar;
+         this.statsTotalBikeSlotsTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsTotalBikeSlotsTextbox.Location = new System.Drawing.Point(92, 101);
+         this.statsTotalBikeSlotsTextbox.Name = "statsTotalBikeSlotsTextbox";
+         this.statsTotalBikeSlotsTextbox.ReadOnly = true;
+         this.statsTotalBikeSlotsTextbox.Size = new System.Drawing.Size(118, 22);
+         this.statsTotalBikeSlotsTextbox.TabIndex = 11;
+         // 
+         // statsTotalCarSlotsTextbox
+         // 
+         this.statsTotalCarSlotsTextbox.BackColor = System.Drawing.SystemColors.ScrollBar;
+         this.statsTotalCarSlotsTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsTotalCarSlotsTextbox.Location = new System.Drawing.Point(92, 81);
+         this.statsTotalCarSlotsTextbox.Name = "statsTotalCarSlotsTextbox";
+         this.statsTotalCarSlotsTextbox.ReadOnly = true;
+         this.statsTotalCarSlotsTextbox.Size = new System.Drawing.Size(118, 22);
+         this.statsTotalCarSlotsTextbox.TabIndex = 12;
+         // 
+         // statsTotalBikesTextbox
+         // 
+         this.statsTotalBikesTextbox.BackColor = System.Drawing.SystemColors.ScrollBar;
+         this.statsTotalBikesTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsTotalBikesTextbox.Location = new System.Drawing.Point(92, 61);
+         this.statsTotalBikesTextbox.Name = "statsTotalBikesTextbox";
+         this.statsTotalBikesTextbox.ReadOnly = true;
+         this.statsTotalBikesTextbox.Size = new System.Drawing.Size(118, 22);
+         this.statsTotalBikesTextbox.TabIndex = 11;
+         // 
+         // statsTotalCarsTextbox
+         // 
+         this.statsTotalCarsTextbox.BackColor = System.Drawing.SystemColors.ScrollBar;
+         this.statsTotalCarsTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsTotalCarsTextbox.Location = new System.Drawing.Point(92, 41);
+         this.statsTotalCarsTextbox.Name = "statsTotalCarsTextbox";
+         this.statsTotalCarsTextbox.ReadOnly = true;
+         this.statsTotalCarsTextbox.Size = new System.Drawing.Size(118, 22);
+         this.statsTotalCarsTextbox.TabIndex = 10;
+         // 
+         // statsTotalFloorsTextbox
+         // 
+         this.statsTotalFloorsTextbox.BackColor = System.Drawing.SystemColors.ScrollBar;
+         this.statsTotalFloorsTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsTotalFloorsTextbox.Location = new System.Drawing.Point(92, 21);
+         this.statsTotalFloorsTextbox.Name = "statsTotalFloorsTextbox";
+         this.statsTotalFloorsTextbox.ReadOnly = true;
+         this.statsTotalFloorsTextbox.Size = new System.Drawing.Size(118, 22);
+         this.statsTotalFloorsTextbox.TabIndex = 9;
+         // 
+         // statsTotalFloorsLabel
+         // 
+         this.statsTotalFloorsLabel.AutoSize = true;
+         this.statsTotalFloorsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsTotalFloorsLabel.Location = new System.Drawing.Point(5, 22);
+         this.statsTotalFloorsLabel.Name = "statsTotalFloorsLabel";
+         this.statsTotalFloorsLabel.Size = new System.Drawing.Size(55, 18);
+         this.statsTotalFloorsLabel.TabIndex = 0;
+         this.statsTotalFloorsLabel.Text = "Floors:";
+         // 
+         // statsTotalBikeSlotsLabel
+         // 
+         this.statsTotalBikeSlotsLabel.AutoSize = true;
+         this.statsTotalBikeSlotsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsTotalBikeSlotsLabel.Location = new System.Drawing.Point(7, 102);
+         this.statsTotalBikeSlotsLabel.Name = "statsTotalBikeSlotsLabel";
+         this.statsTotalBikeSlotsLabel.Size = new System.Drawing.Size(77, 18);
+         this.statsTotalBikeSlotsLabel.TabIndex = 8;
+         this.statsTotalBikeSlotsLabel.Text = "Bike slots:";
+         // 
+         // statsTotalCarsLabel
+         // 
+         this.statsTotalCarsLabel.AutoSize = true;
+         this.statsTotalCarsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsTotalCarsLabel.Location = new System.Drawing.Point(5, 42);
+         this.statsTotalCarsLabel.Name = "statsTotalCarsLabel";
+         this.statsTotalCarsLabel.Size = new System.Drawing.Size(44, 18);
+         this.statsTotalCarsLabel.TabIndex = 1;
+         this.statsTotalCarsLabel.Text = "Cars:";
+         // 
+         // statsTotalCarSlotsLabel
+         // 
+         this.statsTotalCarSlotsLabel.AutoSize = true;
+         this.statsTotalCarSlotsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsTotalCarSlotsLabel.Location = new System.Drawing.Point(7, 82);
+         this.statsTotalCarSlotsLabel.Name = "statsTotalCarSlotsLabel";
+         this.statsTotalCarSlotsLabel.Size = new System.Drawing.Size(72, 18);
+         this.statsTotalCarSlotsLabel.TabIndex = 7;
+         this.statsTotalCarSlotsLabel.Text = "Car slots:";
+         // 
+         // statsTotalBikesLabel
+         // 
+         this.statsTotalBikesLabel.AutoSize = true;
+         this.statsTotalBikesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsTotalBikesLabel.Location = new System.Drawing.Point(7, 62);
+         this.statsTotalBikesLabel.Name = "statsTotalBikesLabel";
+         this.statsTotalBikesLabel.Size = new System.Drawing.Size(49, 18);
+         this.statsTotalBikesLabel.TabIndex = 2;
+         this.statsTotalBikesLabel.Text = "Bikes:";
+         // 
          // MainForm
          // 
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
          this.BackColor = System.Drawing.Color.Gray;
-         this.ClientSize = new System.Drawing.Size(774, 561);
+         this.ClientSize = new System.Drawing.Size(1084, 629);
+         this.Controls.Add(this.statsGroupBox);
          this.Controls.Add(this.driveInOutTabControl);
          this.Controls.Add(this.floorDisplayPanel);
          this.Controls.Add(this.floorCreationTabControl);
          this.Controls.Add(this.floorSelectionComboBox);
          this.Location = new System.Drawing.Point(15, 15);
-         this.MaximumSize = new System.Drawing.Size(790, 600);
-         this.MinimumSize = new System.Drawing.Size(790, 600);
+         this.MaximumSize = new System.Drawing.Size(1100, 668);
+         this.MinimumSize = new System.Drawing.Size(1100, 668);
          this.Name = "MainForm";
          this.RightToLeftLayout = true;
          this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+         this.Text = "Parkhouse Simulation";
          this.floorCreationTabControl.ResumeLayout(false);
          this.createParkhousePage.ResumeLayout(false);
          this.createParkhousePage.PerformLayout();
@@ -475,8 +744,42 @@
          this.driveOutPage.PerformLayout();
          ((System.ComponentModel.ISupportInitialize)(this.driveOutBikesNumericUpDown)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.driveOutCarsNumericUpDown)).EndInit();
+         this.statsGroupBox.ResumeLayout(false);
+         this.statsOccupiedGroupBox.ResumeLayout(false);
+         this.statsOccupiedGroupBox.PerformLayout();
+         this.statsFreeGroupBox.ResumeLayout(false);
+         this.statsFreeGroupBox.PerformLayout();
+         this.statsTotalGroupBox.ResumeLayout(false);
+         this.statsTotalGroupBox.PerformLayout();
          this.ResumeLayout(false);
       }
+
+      private System.Windows.Forms.TextBox statsTotalCarsTextbox;
+      private System.Windows.Forms.TextBox statsTotalBikesTextbox;
+      private System.Windows.Forms.TextBox statsTotalCarSlotsTextbox;
+      private System.Windows.Forms.TextBox statsTotalBikeSlotsTextbox;
+      private System.Windows.Forms.TextBox statsFreeBikeSlotsTextbox;
+      private System.Windows.Forms.TextBox statsFreeCarSlotsTextbox;
+      private System.Windows.Forms.TextBox statsOccupiedBikeSlotsTextbox;
+      private System.Windows.Forms.TextBox statsOccupiedCarSlotsTextbox;
+
+      private System.Windows.Forms.GroupBox statsTotalGroupBox;
+      private System.Windows.Forms.GroupBox statsFreeGroupBox;
+      private System.Windows.Forms.TextBox statsTotalFloorsTextbox;
+      private System.Windows.Forms.Label statsOccupiedCarSlotsLabel;
+      private System.Windows.Forms.Label statsOccupiedBikeSlotsLabel;
+
+      private System.Windows.Forms.Label statsTotalCarSlotsLabel;
+      private System.Windows.Forms.Label statsTotalBikeSlotsLabel;
+      private System.Windows.Forms.GroupBox statsOccupiedGroupBox;
+
+      private System.Windows.Forms.Label statsTotalFloorsLabel;
+      private System.Windows.Forms.Label statsTotalCarsLabel;
+      private System.Windows.Forms.Label statsTotalBikesLabel;
+      private System.Windows.Forms.Label statsFreeCarSlotsLabel;
+      private System.Windows.Forms.Label statsFreeBikeSlotsLabel;
+      
+      private System.Windows.Forms.GroupBox statsGroupBox;
 
       private System.Windows.Forms.Button driveInButton;
       private System.Windows.Forms.NumericUpDown driveInBikesNumericUpDown;

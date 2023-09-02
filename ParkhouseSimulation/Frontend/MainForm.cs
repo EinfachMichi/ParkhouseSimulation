@@ -15,6 +15,7 @@ namespace ParkhouseSimulation.Frontend
          InitializeComponent();
          RefreshFloorCreatePage();
          RefreshDriveInPage();
+         RefreshParkhouseStats();
       }
 
       #region Floor (Create/Edit/Remove)
@@ -52,6 +53,7 @@ namespace ParkhouseSimulation.Frontend
          floorSelectionComboBox.SelectedIndex = parkhouse.Floors - 1;
          
          RefreshDriveInPage();
+         RefreshParkhouseStats();
       }
 
       private void FloorEditPageComboBox_DropDownClosed(object sender, EventArgs e)
@@ -96,6 +98,7 @@ namespace ParkhouseSimulation.Frontend
          floorPanels[selectedIndex] = newPanel;
          
          RefreshFloorDisplay(selectedIndex);
+         RefreshParkhouseStats();
       }
 
       private void FloorRemovePageComboBox_DropDownClosed(object sender, EventArgs e)
@@ -141,6 +144,7 @@ namespace ParkhouseSimulation.Frontend
          
          UpdateFloorComboBox(removeIndex + temp, floorSelectionComboBox);
          RefreshFloorRemovePage(removeIndex + temp);
+         RefreshParkhouseStats();
       }
 
       //----------------------------------------------------------------------------------------------------------------
@@ -226,6 +230,7 @@ namespace ParkhouseSimulation.Frontend
          }
          
          RefreshDriveInPage();
+         RefreshParkhouseStats();
       }
       
       private void DriveOutButton_Click(object sender, EventArgs e)
@@ -244,6 +249,7 @@ namespace ParkhouseSimulation.Frontend
          }
          
          RefreshDriveOutPage();
+         RefreshParkhouseStats();
       }
       
       private void DriveInCarsNumericUpDown_Leave(object sender, EventArgs e)
@@ -308,6 +314,37 @@ namespace ParkhouseSimulation.Frontend
          }
 
          driveOutButton.Enabled = parkhouse.Floors > 0;
+      }
+
+      #endregion
+
+      #region Parkhouse stats
+
+      private void RefreshParkhouseStats()
+      {
+         int totalFloors = parkhouse.Floors;
+         int totalCars = parkhouse.Cars;
+         int totalBikes = parkhouse.Bikes;
+         int totalCarSlots = parkhouse.CarSlots;
+         int totalBikeSlots = parkhouse.BikeSlots;
+
+         int freeCarSlots = parkhouse.FreeParkingSlotCountForCars();
+         int freeBikeSlots = parkhouse.FreeParkingSlotCountForBikes();
+
+         int occupiedCarSlots = parkhouse.OccupiedParkingSlotCountForCars();
+         int occupiedBikeSlots = parkhouse.OccupiedParkingSlotCountForBikes();
+
+         statsTotalFloorsTextbox.Text = totalFloors.ToString();
+         statsTotalCarsTextbox.Text = totalCars.ToString();
+         statsTotalBikesTextbox.Text = totalBikes.ToString();
+         statsTotalCarSlotsTextbox.Text = totalCarSlots.ToString();
+         statsTotalBikeSlotsTextbox.Text = totalBikeSlots.ToString();
+
+         statsFreeCarSlotsTextbox.Text = freeCarSlots.ToString();
+         statsFreeBikeSlotsTextbox.Text = freeBikeSlots.ToString();
+
+         statsOccupiedCarSlotsTextbox.Text = occupiedCarSlots.ToString();
+         statsOccupiedBikeSlotsTextbox.Text = occupiedBikeSlots.ToString();
       }
 
       #endregion

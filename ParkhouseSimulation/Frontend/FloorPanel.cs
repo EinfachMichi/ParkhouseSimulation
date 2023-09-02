@@ -12,7 +12,7 @@ namespace ParkhouseSimulation.Frontend
 
       public FloorPanel(Floor floor)
       {
-         Size = new Size(547, 498);
+         Size = new Size(547, 567);
          Location = new Point(0, 0);
          AutoScroll = true;
          

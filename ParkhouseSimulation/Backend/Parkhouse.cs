@@ -6,6 +6,54 @@ namespace ParkhouseSimulation.Backend
    public class Parkhouse
    {
       public int Floors => floors.Count;
+      public int Cars
+      {
+         get
+         {
+            int count = 0;
+            foreach(Floor floor in floors)
+            {
+               count += floor.OccupiedParkingSlotCountForCars();
+            }
+            return count;
+         }
+      }
+      public int Bikes
+      {
+         get
+         {
+            int count = 0;
+            foreach(Floor floor in floors)
+            {
+               count += floor.OccupiedParkingSlotCountForBikes();
+            }
+            return count;
+         }
+      }
+      public int CarSlots
+      {
+         get
+         {
+            int count = 0;
+            foreach(Floor floor in floors)
+            {
+               count += floor.CarSlots.Length;
+            }
+            return count;
+         }
+      }
+      public int BikeSlots
+      {
+         get
+         {
+            int count = 0;
+            foreach(Floor floor in floors)
+            {
+               count += floor.BikeSlots.Length;
+            }
+            return count;
+         }
+      }
       
       private List<Floor> floors = new List<Floor>();
       private int uniqueVehicleID;
