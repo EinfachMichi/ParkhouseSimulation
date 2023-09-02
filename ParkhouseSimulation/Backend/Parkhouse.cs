@@ -147,6 +147,17 @@ namespace ParkhouseSimulation.Backend
          }
          return count;
       }
+
+      public Vehicle FindVehicle(string id)
+      {
+         foreach(Floor floor in floors)
+         {
+            Vehicle vehicle = floor.FindVehicle(id);
+            if(vehicle == null) continue;
+            return vehicle;
+         }
+         return null;
+      }
       
       public Floor GetFloor(int index) => floors[index];
       public int GetCarSlotCount(Floor floor) => floor.CarSlots.Length;

@@ -514,6 +514,35 @@ namespace ParkhouseSimulation.Frontend
       }
       
       #endregion
+
+      #region Vehicle Search
+      
+      private void SearchVehicleButton_Click(object sender, EventArgs e)
+      {
+         try
+         {
+            string vehicleID = searchVehicleEnterIDTextbox.Text;
+            Vehicle vehicle = parkhouse.FindVehicle(vehicleID);
+            MessageBox.Show(
+               $"This vehicle stays at position: [{vehicle.Position}].",
+               $"{vehicle.Type}: {vehicle.ID}",
+               MessageBoxButtons.OK,
+               MessageBoxIcon.Information
+            );
+         }
+         catch(Exception exception)
+         {
+            MessageBox.Show(
+               $"There is no vehicle with the id: {searchVehicleEnterIDTextbox.Text}.",
+               "Input not correct!",
+               MessageBoxButtons.OK,
+               MessageBoxIcon.Error
+            );
+         }
+         searchVehicleEnterIDTextbox.Text = "";
+      }
+      
+      #endregion
       
       #region Extra Utilty
 

@@ -88,6 +88,10 @@
          this.vehicleSearchComboBox = new System.Windows.Forms.ComboBox();
          this.vehicleSearchLabel = new System.Windows.Forms.Label();
          this.vehicleDisplayPanel = new System.Windows.Forms.FlowLayoutPanel();
+         this.searchVehicleGroupBox = new System.Windows.Forms.GroupBox();
+         this.searchVehicleButton = new System.Windows.Forms.Button();
+         this.searchVehicleEnterIDTextbox = new System.Windows.Forms.TextBox();
+         this.searchVehicleEnterIDLabel = new System.Windows.Forms.Label();
          this.floorCreationTabControl.SuspendLayout();
          this.createParkhousePage.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.floorCreatePageBikesNumericUpDown)).BeginInit();
@@ -107,6 +111,7 @@
          this.statsOccupiedGroupBox.SuspendLayout();
          this.statsFreeGroupBox.SuspendLayout();
          this.statsTotalGroupBox.SuspendLayout();
+         this.searchVehicleGroupBox.SuspendLayout();
          this.SuspendLayout();
          // 
          // floorSelectionComboBox
@@ -739,14 +744,58 @@
          this.vehicleDisplayPanel.Location = new System.Drawing.Point(826, 51);
          this.vehicleDisplayPanel.Name = "vehicleDisplayPanel";
          this.vehicleDisplayPanel.Padding = new System.Windows.Forms.Padding(5);
-         this.vehicleDisplayPanel.Size = new System.Drawing.Size(192, 567);
+         this.vehicleDisplayPanel.Size = new System.Drawing.Size(192, 486);
          this.vehicleDisplayPanel.TabIndex = 9;
+         // 
+         // searchVehicleGroupBox
+         // 
+         this.searchVehicleGroupBox.Controls.Add(this.searchVehicleButton);
+         this.searchVehicleGroupBox.Controls.Add(this.searchVehicleEnterIDTextbox);
+         this.searchVehicleGroupBox.Controls.Add(this.searchVehicleEnterIDLabel);
+         this.searchVehicleGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.searchVehicleGroupBox.Location = new System.Drawing.Point(826, 543);
+         this.searchVehicleGroupBox.Name = "searchVehicleGroupBox";
+         this.searchVehicleGroupBox.Size = new System.Drawing.Size(191, 74);
+         this.searchVehicleGroupBox.TabIndex = 12;
+         this.searchVehicleGroupBox.TabStop = false;
+         this.searchVehicleGroupBox.Text = "Search for vehicle";
+         // 
+         // searchVehicleButton
+         // 
+         this.searchVehicleButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+         this.searchVehicleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.searchVehicleButton.Location = new System.Drawing.Point(3, 48);
+         this.searchVehicleButton.Name = "searchVehicleButton";
+         this.searchVehicleButton.Size = new System.Drawing.Size(185, 23);
+         this.searchVehicleButton.TabIndex = 2;
+         this.searchVehicleButton.Text = "Search";
+         this.searchVehicleButton.UseVisualStyleBackColor = true;
+         this.searchVehicleButton.Click += new System.EventHandler(this.SearchVehicleButton_Click);
+         // 
+         // searchVehicleEnterIDTextbox
+         // 
+         this.searchVehicleEnterIDTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.searchVehicleEnterIDTextbox.Location = new System.Drawing.Point(70, 24);
+         this.searchVehicleEnterIDTextbox.Name = "searchVehicleEnterIDTextbox";
+         this.searchVehicleEnterIDTextbox.Size = new System.Drawing.Size(115, 22);
+         this.searchVehicleEnterIDTextbox.TabIndex = 1;
+         // 
+         // searchVehicleEnterIDLabel
+         // 
+         this.searchVehicleEnterIDLabel.AutoSize = true;
+         this.searchVehicleEnterIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.searchVehicleEnterIDLabel.Location = new System.Drawing.Point(6, 27);
+         this.searchVehicleEnterIDLabel.Name = "searchVehicleEnterIDLabel";
+         this.searchVehicleEnterIDLabel.Size = new System.Drawing.Size(58, 16);
+         this.searchVehicleEnterIDLabel.TabIndex = 0;
+         this.searchVehicleEnterIDLabel.Text = "Enter ID;";
          // 
          // MainForm
          // 
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
          this.BackColor = System.Drawing.Color.Gray;
          this.ClientSize = new System.Drawing.Size(1029, 629);
+         this.Controls.Add(this.searchVehicleGroupBox);
          this.Controls.Add(this.vehicleDisplayPanel);
          this.Controls.Add(this.vehicleSearchLabel);
          this.Controls.Add(this.vehicleSearchComboBox);
@@ -789,9 +838,18 @@
          this.statsFreeGroupBox.PerformLayout();
          this.statsTotalGroupBox.ResumeLayout(false);
          this.statsTotalGroupBox.PerformLayout();
+         this.searchVehicleGroupBox.ResumeLayout(false);
+         this.searchVehicleGroupBox.PerformLayout();
          this.ResumeLayout(false);
          this.PerformLayout();
       }
+
+      private System.Windows.Forms.Button searchVehicleButton;
+
+      private System.Windows.Forms.TextBox searchVehicleEnterIDTextbox;
+
+      private System.Windows.Forms.GroupBox searchVehicleGroupBox;
+      private System.Windows.Forms.Label searchVehicleEnterIDLabel;
 
 
       private System.Windows.Forms.FlowLayoutPanel vehicleDisplayPanel;

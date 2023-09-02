@@ -144,5 +144,17 @@ namespace ParkhouseSimulation.Backend
          }
          return vehicles.ToArray();
       }
+
+      public Vehicle FindVehicle(string id)
+      {
+         foreach(ParkingSlot slot in slots)
+         {
+            if(slot.Vehicle.ID == id)
+            {
+               return slot.Vehicle;
+            }
+         }
+         return null;
+      }
    }
 }
