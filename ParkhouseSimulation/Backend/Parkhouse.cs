@@ -8,6 +8,7 @@ namespace ParkhouseSimulation.Backend
       public int Floors => floors.Count;
       
       private List<Floor> floors = new List<Floor>();
+      private int uniqueVehicleID;
 
       public Floor AddFloor(int carCount, int bikeCount)
       {
@@ -28,9 +29,7 @@ namespace ParkhouseSimulation.Backend
          return removedFloor;
       }
 
-      private int uniqueVehicleID;
-      
-      public bool AddVehicle(VehicleType type)
+      public void AddVehicle(VehicleType type)
       {
          Vehicle vehicle = new Vehicle(uniqueVehicleID.ToString(), type);
          ParkingSlot slot = FindFreeSlotFor(vehicle);
@@ -38,9 +37,18 @@ namespace ParkhouseSimulation.Backend
          {
             slot.Vehicle = vehicle;
             uniqueVehicleID++;
-            return true;
          }
-         return false;
+      }
+
+      public void RemoveVehicle(VehicleType type)
+      {
+         for(int i = Floors - 1; i >= 0; i--)
+         {
+            if(floors[i].RemoveVehicle(type))
+            {
+               return;
+            }   
+         }
       }
 
       public int FreeParkingSlotCountForCars()
@@ -59,6 +67,26 @@ namespace ParkhouseSimulation.Backend
          foreach(Floor floor in floors)
          {
             count += floor.FreeParkingSlotCountForBikes();
+         }
+         return count;
+      }
+
+      public int OccupiedParkingSlotCountForCars()
+      {
+         int count = 0;
+         foreach(Floor floor in floors)
+         {
+            count += floor.OccupiedParkingSlotCountForCars();
+         }
+         return count;
+      }
+      
+      public int OccupiedParkingSlotCountForBikes()
+      {
+         int count = 0;
+         foreach(Floor floor in floors)
+         {
+            count += floor.OccupiedParkingSlotCountForBikes();
          }
          return count;
       }

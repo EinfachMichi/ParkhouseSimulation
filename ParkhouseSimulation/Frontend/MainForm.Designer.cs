@@ -402,6 +402,7 @@
          this.driveOutButton.TabIndex = 14;
          this.driveOutButton.Text = "Exit parkhouse";
          this.driveOutButton.UseVisualStyleBackColor = true;
+         this.driveOutButton.Click += new System.EventHandler(this.DriveOutButton_Click);
          // 
          // driveOutBikesNumericUpDown
          // 
@@ -409,6 +410,7 @@
          this.driveOutBikesNumericUpDown.Name = "driveOutBikesNumericUpDown";
          this.driveOutBikesNumericUpDown.Size = new System.Drawing.Size(122, 20);
          this.driveOutBikesNumericUpDown.TabIndex = 13;
+         this.driveOutBikesNumericUpDown.Leave += new System.EventHandler(this.DriveOutBikesNumericUpDown_Leave);
          // 
          // driveOutCarsNumericUpDown
          // 
@@ -417,6 +419,7 @@
          this.driveOutCarsNumericUpDown.Name = "driveOutCarsNumericUpDown";
          this.driveOutCarsNumericUpDown.Size = new System.Drawing.Size(122, 20);
          this.driveOutCarsNumericUpDown.TabIndex = 12;
+         this.driveOutCarsNumericUpDown.Leave += new System.EventHandler(this.DriveOutCarsNumericUpDown_Leave);
          // 
          // driveOutBikesLabel
          // 

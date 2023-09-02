@@ -106,6 +106,19 @@ namespace ParkhouseSimulation.Frontend
       
       private void FloorRemovePageButton_Click(object sender, EventArgs e)
       {
+         Floor removingFloor = parkhouse.GetFloor(floorRemovePageComboBox.SelectedIndex);
+         if(removingFloor.FreeParkingSlotCount() < removingFloor.SlotCount)
+         {
+            DialogResult result = MessageBox.Show(
+                        "When you remove this floor all parked cars will exit this parkhouse.",
+                        "Are you sure?",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning
+            );
+
+            if(result != DialogResult.Yes) return;
+         }
+         
          int removeIndex = floorRemovePageComboBox.SelectedIndex;
 
          floorPanels[removeIndex].Dispose();
@@ -204,19 +217,33 @@ namespace ParkhouseSimulation.Frontend
 
          for(int i = 0; i < carCount; i++)
          {
-            if(!parkhouse.AddVehicle(VehicleType.Car))
-            {
-            }
+            parkhouse.AddVehicle(VehicleType.Car);
          }
          
          for(int i = 0; i < bikeCount; i++)
          {
-            if(!parkhouse.AddVehicle(VehicleType.Bike))
-            {
-            }
+            parkhouse.AddVehicle(VehicleType.Bike);
          }
          
          RefreshDriveInPage();
+      }
+      
+      private void DriveOutButton_Click(object sender, EventArgs e)
+      {
+         int carCount = (int) driveOutCarsNumericUpDown.Value;
+         int bikeCount = (int) driveOutBikesNumericUpDown.Value;
+
+         for(int i = 0; i < carCount; i++)
+         {
+            parkhouse.RemoveVehicle(VehicleType.Car);
+         }
+         
+         for(int i = 0; i < bikeCount; i++)
+         {
+            parkhouse.RemoveVehicle(VehicleType.Bike);
+         }
+         
+         RefreshDriveOutPage();
       }
       
       private void DriveInCarsNumericUpDown_Leave(object sender, EventArgs e)
@@ -227,6 +254,16 @@ namespace ParkhouseSimulation.Frontend
       private void DriveInBikesNumericUpDown_Leave(object sender, EventArgs e)
       {
          RefreshDriveInPage();
+      }
+      
+      private void DriveOutCarsNumericUpDown_Leave(object sender, EventArgs e)
+      {
+         RefreshDriveOutPage();
+      }
+      
+      private void DriveOutBikesNumericUpDown_Leave(object sender, EventArgs e)
+      {
+         RefreshDriveOutPage();
       }
 
       //----------------------------------------------------------------------------------------------------------------
@@ -250,6 +287,27 @@ namespace ParkhouseSimulation.Frontend
          }
 
          driveInButton.Enabled = parkhouse.Floors > 0;
+      }
+
+      private void RefreshDriveOutPage()
+      {
+         int maxPossibleCars = parkhouse.OccupiedParkingSlotCountForCars();
+         int inputNumberCars = (int) driveOutCarsNumericUpDown.Value;
+
+         if(inputNumberCars > maxPossibleCars)
+         {
+            driveOutCarsNumericUpDown.Value = maxPossibleCars;
+         }
+         
+         int maxPossibleBikes = parkhouse.OccupiedParkingSlotCountForBikes();
+         int inputNumberBikes = (int) driveOutBikesNumericUpDown.Value;
+
+         if(inputNumberBikes > maxPossibleBikes)
+         {
+            driveOutBikesNumericUpDown.Value = maxPossibleBikes;
+         }
+
+         driveOutButton.Enabled = parkhouse.Floors > 0;
       }
 
       #endregion

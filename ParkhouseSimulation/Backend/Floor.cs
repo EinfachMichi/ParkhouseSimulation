@@ -77,6 +77,26 @@ namespace ParkhouseSimulation.Backend
          return count;
       }
 
+      public int OccupiedParkingSlotCountForCars()
+      {
+         int count = 0;
+         foreach(ParkingSlot slot in carSlots)
+         {
+            if(!slot.Free) count++;
+         }
+         return count;
+      }
+      
+      public int OccupiedParkingSlotCountForBikes()
+      {
+         int count = 0;
+         foreach(ParkingSlot slot in bikeSlots)
+         {
+            if(!slot.Free) count++;
+         }
+         return count;
+      }
+      
       public bool FindFreeParkingSlotFor(Vehicle vehicle, out ParkingSlot slot)
       {
          foreach(ParkingSlot parkingSlot in slots)
@@ -88,6 +108,19 @@ namespace ParkhouseSimulation.Backend
             }
          }
          slot = null;
+         return false;
+      }
+
+      public bool RemoveVehicle(VehicleType type)
+      {
+         for(int i = slots.Count - 1; i >= 0; i--)
+         {
+            if(!slots[i].Free && slots[i].Type == type)
+            {
+               slots[i].Vehicle = null;
+               return true;
+            }
+         }
          return false;
       }
    }
