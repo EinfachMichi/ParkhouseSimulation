@@ -33,6 +33,7 @@ namespace ParkhouseSimulation.Frontend
                RefreshFloorEditPage(floorSelectionComboBox.SelectedIndex);
                break;
             case 2:
+               floorRemovePageButton.Focus();
                RefreshFloorRemovePage(floorSelectionComboBox.SelectedIndex);
                break;
          }
@@ -187,6 +188,70 @@ namespace ParkhouseSimulation.Frontend
          }
       }
 
+      private void FloorCreatePageCarsNumericUpDown_Enter(object sender, EventArgs e)
+      {
+         if(floorCreatePageCarsNumericUpDown.Value == 0)
+         {
+            floorCreatePageCarsNumericUpDown.Text = "";
+         }
+      }
+
+      private void FloorCreatePageBikesNumericUpDown_Enter(object sender, EventArgs e)
+      {
+         if(floorCreatePageBikesNumericUpDown.Value == 0)
+         {
+            floorCreatePageBikesNumericUpDown.Text = "";
+         }
+      }
+      
+      private void FloorEditPageCarsNumericUpDown_Enter(object sender, EventArgs e)
+      {
+         if(floorEditPageCarsNumericUpDown.Value == 0)
+         {
+            floorEditPageCarsNumericUpDown.Text = "";
+         }
+      }
+
+      private void FloorEditPageBikesNumericUpDown_Enter(object sender, EventArgs e)
+      {
+         if(floorEditPageBikesNumericUpDown.Value == 0)
+         {
+            floorEditPageBikesNumericUpDown.Text = "";
+         }
+      }
+      
+      private void FloorCreatePageCarsNumericUpDown_Leave(object sender, EventArgs e)
+      {
+         if(floorCreatePageCarsNumericUpDown.Text == "")
+         {
+            floorCreatePageCarsNumericUpDown.Text = "0";
+         }
+      }
+
+      private void FloorCreatePageBikesNumericUpDown_Leave(object sender, EventArgs e)
+      {
+         if(floorCreatePageBikesNumericUpDown.Text == "")
+         {
+            floorCreatePageBikesNumericUpDown.Text = "0";
+         }
+      }
+
+      private void FloorEditPageCarsNumericUpDown_Leave(object sender, EventArgs e)
+      {
+         if(floorEditPageCarsNumericUpDown.Text == "")
+         {
+            floorEditPageCarsNumericUpDown.Text = "0";
+         }
+      }
+
+      private void FloorEditPageBikesNumericUpDown_Leave(object sender, EventArgs e)
+      {
+         if(floorEditPageBikesNumericUpDown.Text == "")
+         {
+            floorEditPageBikesNumericUpDown.Text = "0";
+         }
+      }
+      
       //----------------------------------------------------------------------------------------------------------------
       
       private void RefreshFloorCreatePage()
@@ -303,21 +368,37 @@ namespace ParkhouseSimulation.Frontend
       private void DriveInCarsNumericUpDown_Leave(object sender, EventArgs e)
       {
          RefreshDriveInPage();
+         if(driveInCarsNumericUpDown.Text == "")
+         {
+            driveInCarsNumericUpDown.Text = "0";
+         }
       }
       
       private void DriveInBikesNumericUpDown_Leave(object sender, EventArgs e)
       {
          RefreshDriveInPage();
+         if(driveInBikesNumericUpDown.Text == "")
+         {
+            driveInBikesNumericUpDown.Text = "0";
+         }
       }
       
       private void DriveOutCarsNumericUpDown_Leave(object sender, EventArgs e)
       {
          RefreshDriveOutPage();
+         if(driveOutCarsNumericUpDown.Text == "")
+         {
+            driveOutCarsNumericUpDown.Text = "0";
+         }
       }
       
       private void DriveOutBikesNumericUpDown_Leave(object sender, EventArgs e)
       {
          RefreshDriveOutPage();
+         if(driveOutBikesNumericUpDown.Text == "")
+         {
+            driveOutBikesNumericUpDown.Text = "0";
+         }
       }
       
       private void DriveInCarsNumericUpDown_KeyDown(object sender, KeyEventArgs e)
@@ -349,6 +430,38 @@ namespace ParkhouseSimulation.Frontend
          if(e.KeyCode == Keys.Enter)
          {
             DriveOutButton_Click(sender, e);
+         }
+      }
+      
+      private void DriveInCarsNumericUpDown_Enter(object sender, EventArgs e)
+      {
+         if(driveInCarsNumericUpDown.Value == 0)
+         {
+            driveInCarsNumericUpDown.Text = "";
+         }
+      }
+
+      private void DriveInBikesNumericUpDown_Enter(object sender, EventArgs e)
+      {
+         if(driveInBikesNumericUpDown.Value == 0)
+         {
+            driveInBikesNumericUpDown.Text = "";
+         }
+      }
+
+      private void DriveOutCarsNumericUpDown_Enter(object sender, EventArgs e)
+      {
+         if(driveOutCarsNumericUpDown.Value == 0)
+         {
+            driveOutCarsNumericUpDown.Text = "";
+         }
+      }
+
+      private void DriveOutBikesNumericUpDown_Enter(object sender, EventArgs e)
+      {
+         if(driveOutBikesNumericUpDown.Value == 0)
+         {
+            driveOutBikesNumericUpDown.Text = "";
          }
       }
 
@@ -606,6 +719,14 @@ namespace ParkhouseSimulation.Frontend
             );
          }
          searchVehicleEnterIDTextbox.Text = "";
+      }
+      
+      private void SearchVehicleEnterIDTextbox_KeyDown(object sender, KeyEventArgs e)
+      {
+         if(e.KeyCode == Keys.Enter)
+         {
+            SearchVehicleButton_Click(sender, e);
+         }
       }
       
       #endregion
