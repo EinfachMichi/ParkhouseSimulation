@@ -6,6 +6,19 @@ namespace ParkhouseSimulation.Backend
    public class Parkhouse
    {
       public int Floors => floors.Count;
+
+      public int Slots
+      {
+         get
+         {
+            int count = 0;
+            foreach(Floor floor in floors)
+            {
+               count += floor.SlotCount;
+            }
+            return count;
+         }
+      }
       public int Cars
       {
          get

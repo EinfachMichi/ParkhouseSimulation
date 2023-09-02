@@ -343,6 +343,7 @@ namespace ParkhouseSimulation.Frontend
          int totalBikes = parkhouse.Bikes;
          int totalCarSlots = parkhouse.CarSlots;
          int totalBikeSlots = parkhouse.BikeSlots;
+         int totalSlots = parkhouse.Slots;
 
          int freeCarSlots = parkhouse.FreeParkingSlotCountForCars();
          int freeBikeSlots = parkhouse.FreeParkingSlotCountForBikes();
@@ -355,6 +356,7 @@ namespace ParkhouseSimulation.Frontend
          statsTotalBikesTextbox.Text = totalBikes.ToString();
          statsTotalCarSlotsTextbox.Text = totalCarSlots.ToString();
          statsTotalBikeSlotsTextbox.Text = totalBikeSlots.ToString();
+         statsTotalSlotsTextbox.Text = totalSlots.ToString();
 
          statsFreeCarSlotsTextbox.Text = freeCarSlots.ToString();
          statsFreeBikeSlotsTextbox.Text = freeBikeSlots.ToString();

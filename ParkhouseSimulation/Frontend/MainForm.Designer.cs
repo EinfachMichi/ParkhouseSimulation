@@ -92,6 +92,8 @@
          this.searchVehicleButton = new System.Windows.Forms.Button();
          this.searchVehicleEnterIDTextbox = new System.Windows.Forms.TextBox();
          this.searchVehicleEnterIDLabel = new System.Windows.Forms.Label();
+         this.statsTotalSlotsTextbox = new System.Windows.Forms.TextBox();
+         this.statsTotalSlotsLabel = new System.Windows.Forms.Label();
          this.floorCreationTabControl.SuspendLayout();
          this.createParkhousePage.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.floorCreatePageBikesNumericUpDown)).BeginInit();
@@ -481,9 +483,9 @@
          this.statsGroupBox.Controls.Add(this.statsFreeGroupBox);
          this.statsGroupBox.Controls.Add(this.statsTotalGroupBox);
          this.statsGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.statsGroupBox.Location = new System.Drawing.Point(12, 308);
+         this.statsGroupBox.Location = new System.Drawing.Point(12, 297);
          this.statsGroupBox.Name = "statsGroupBox";
-         this.statsGroupBox.Size = new System.Drawing.Size(242, 310);
+         this.statsGroupBox.Size = new System.Drawing.Size(242, 320);
          this.statsGroupBox.TabIndex = 6;
          this.statsGroupBox.TabStop = false;
          this.statsGroupBox.Text = "Parkhouse stats";
@@ -495,7 +497,7 @@
          this.statsOccupiedGroupBox.Controls.Add(this.statsOccupiedCarSlotsTextbox);
          this.statsOccupiedGroupBox.Controls.Add(this.statsOccupiedBikeSlotsLabel);
          this.statsOccupiedGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.statsOccupiedGroupBox.Location = new System.Drawing.Point(6, 235);
+         this.statsOccupiedGroupBox.Location = new System.Drawing.Point(6, 246);
          this.statsOccupiedGroupBox.Name = "statsOccupiedGroupBox";
          this.statsOccupiedGroupBox.Size = new System.Drawing.Size(229, 68);
          this.statsOccupiedGroupBox.TabIndex = 11;
@@ -549,7 +551,7 @@
          this.statsFreeGroupBox.Controls.Add(this.statsFreeCarSlotsLabel);
          this.statsFreeGroupBox.Controls.Add(this.statsFreeBikeSlotsLabel);
          this.statsFreeGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.statsFreeGroupBox.Location = new System.Drawing.Point(6, 161);
+         this.statsFreeGroupBox.Location = new System.Drawing.Point(6, 172);
          this.statsFreeGroupBox.Name = "statsFreeGroupBox";
          this.statsFreeGroupBox.Size = new System.Drawing.Size(229, 68);
          this.statsFreeGroupBox.TabIndex = 10;
@@ -598,6 +600,8 @@
          // 
          // statsTotalGroupBox
          // 
+         this.statsTotalGroupBox.Controls.Add(this.statsTotalSlotsTextbox);
+         this.statsTotalGroupBox.Controls.Add(this.statsTotalSlotsLabel);
          this.statsTotalGroupBox.Controls.Add(this.statsTotalBikeSlotsTextbox);
          this.statsTotalGroupBox.Controls.Add(this.statsTotalCarSlotsTextbox);
          this.statsTotalGroupBox.Controls.Add(this.statsTotalBikesTextbox);
@@ -609,9 +613,9 @@
          this.statsTotalGroupBox.Controls.Add(this.statsTotalCarSlotsLabel);
          this.statsTotalGroupBox.Controls.Add(this.statsTotalBikesLabel);
          this.statsTotalGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.statsTotalGroupBox.Location = new System.Drawing.Point(6, 28);
+         this.statsTotalGroupBox.Location = new System.Drawing.Point(7, 24);
          this.statsTotalGroupBox.Name = "statsTotalGroupBox";
-         this.statsTotalGroupBox.Size = new System.Drawing.Size(229, 127);
+         this.statsTotalGroupBox.Size = new System.Drawing.Size(229, 147);
          this.statsTotalGroupBox.TabIndex = 9;
          this.statsTotalGroupBox.TabStop = false;
          this.statsTotalGroupBox.Text = "Total";
@@ -790,6 +794,26 @@
          this.searchVehicleEnterIDLabel.TabIndex = 0;
          this.searchVehicleEnterIDLabel.Text = "Enter ID;";
          // 
+         // statsTotalSlotsTextbox
+         // 
+         this.statsTotalSlotsTextbox.BackColor = System.Drawing.SystemColors.ScrollBar;
+         this.statsTotalSlotsTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsTotalSlotsTextbox.Location = new System.Drawing.Point(92, 121);
+         this.statsTotalSlotsTextbox.Name = "statsTotalSlotsTextbox";
+         this.statsTotalSlotsTextbox.ReadOnly = true;
+         this.statsTotalSlotsTextbox.Size = new System.Drawing.Size(131, 22);
+         this.statsTotalSlotsTextbox.TabIndex = 14;
+         // 
+         // statsTotalSlotsLabel
+         // 
+         this.statsTotalSlotsLabel.AutoSize = true;
+         this.statsTotalSlotsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.statsTotalSlotsLabel.Location = new System.Drawing.Point(7, 122);
+         this.statsTotalSlotsLabel.Name = "statsTotalSlotsLabel";
+         this.statsTotalSlotsLabel.Size = new System.Drawing.Size(46, 18);
+         this.statsTotalSlotsLabel.TabIndex = 13;
+         this.statsTotalSlotsLabel.Text = "Slots:";
+         // 
          // MainForm
          // 
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -844,6 +868,9 @@
          this.PerformLayout();
       }
 
+      private System.Windows.Forms.TextBox statsTotalSlotsTextbox;
+      private System.Windows.Forms.Label statsTotalSlotsLabel;
+
       private System.Windows.Forms.Button searchVehicleButton;
 
       private System.Windows.Forms.TextBox searchVehicleEnterIDTextbox;
@@ -854,7 +881,8 @@
 
       private System.Windows.Forms.FlowLayoutPanel vehicleDisplayPanel;
 
-      private System.Windows.Forms.ComboBox vehicleSearchComboBox;
+      private System.Windows.Forms.ComboBox 
+      vehicleSearchComboBox;
       private System.Windows.Forms.Label vehicleSearchLabel;
 
       private System.Windows.Forms.TextBox statsTotalCarsTextbox;
