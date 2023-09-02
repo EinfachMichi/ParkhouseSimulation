@@ -111,7 +111,7 @@
          this.floorSelectionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
          this.floorSelectionComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.floorSelectionComboBox.FormattingEnabled = true;
-         this.floorSelectionComboBox.Location = new System.Drawing.Point(246, 19);
+         this.floorSelectionComboBox.Location = new System.Drawing.Point(231, 21);
          this.floorSelectionComboBox.Name = "floorSelectionComboBox";
          this.floorSelectionComboBox.Size = new System.Drawing.Size(172, 24);
          this.floorSelectionComboBox.TabIndex = 2;
@@ -323,7 +323,7 @@
          // floorDisplayPanel
          // 
          this.floorDisplayPanel.BackColor = System.Drawing.Color.DimGray;
-         this.floorDisplayPanel.Location = new System.Drawing.Point(246, 51);
+         this.floorDisplayPanel.Location = new System.Drawing.Point(231, 51);
          this.floorDisplayPanel.Name = "floorDisplayPanel";
          this.floorDisplayPanel.Size = new System.Drawing.Size(547, 567);
          this.floorDisplayPanel.TabIndex = 4;
@@ -475,7 +475,7 @@
          this.statsGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.statsGroupBox.Location = new System.Drawing.Point(12, 308);
          this.statsGroupBox.Name = "statsGroupBox";
-         this.statsGroupBox.Size = new System.Drawing.Size(228, 310);
+         this.statsGroupBox.Size = new System.Drawing.Size(197, 310);
          this.statsGroupBox.TabIndex = 6;
          this.statsGroupBox.TabStop = false;
          this.statsGroupBox.Text = "Parkhouse stats";
@@ -489,7 +489,7 @@
          this.statsOccupiedGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.statsOccupiedGroupBox.Location = new System.Drawing.Point(6, 235);
          this.statsOccupiedGroupBox.Name = "statsOccupiedGroupBox";
-         this.statsOccupiedGroupBox.Size = new System.Drawing.Size(216, 68);
+         this.statsOccupiedGroupBox.Size = new System.Drawing.Size(185, 68);
          this.statsOccupiedGroupBox.TabIndex = 11;
          this.statsOccupiedGroupBox.TabStop = false;
          this.statsOccupiedGroupBox.Text = "Occupied";
@@ -501,7 +501,7 @@
          this.statsOccupiedBikeSlotsTextbox.Location = new System.Drawing.Point(92, 41);
          this.statsOccupiedBikeSlotsTextbox.Name = "statsOccupiedBikeSlotsTextbox";
          this.statsOccupiedBikeSlotsTextbox.ReadOnly = true;
-         this.statsOccupiedBikeSlotsTextbox.Size = new System.Drawing.Size(118, 22);
+         this.statsOccupiedBikeSlotsTextbox.Size = new System.Drawing.Size(87, 22);
          this.statsOccupiedBikeSlotsTextbox.TabIndex = 13;
          // 
          // statsOccupiedCarSlotsLabel
@@ -521,7 +521,7 @@
          this.statsOccupiedCarSlotsTextbox.Location = new System.Drawing.Point(92, 21);
          this.statsOccupiedCarSlotsTextbox.Name = "statsOccupiedCarSlotsTextbox";
          this.statsOccupiedCarSlotsTextbox.ReadOnly = true;
-         this.statsOccupiedCarSlotsTextbox.Size = new System.Drawing.Size(118, 22);
+         this.statsOccupiedCarSlotsTextbox.Size = new System.Drawing.Size(87, 22);
          this.statsOccupiedCarSlotsTextbox.TabIndex = 14;
          // 
          // statsOccupiedBikeSlotsLabel
@@ -543,7 +543,7 @@
          this.statsFreeGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.statsFreeGroupBox.Location = new System.Drawing.Point(6, 161);
          this.statsFreeGroupBox.Name = "statsFreeGroupBox";
-         this.statsFreeGroupBox.Size = new System.Drawing.Size(216, 68);
+         this.statsFreeGroupBox.Size = new System.Drawing.Size(185, 68);
          this.statsFreeGroupBox.TabIndex = 10;
          this.statsFreeGroupBox.TabStop = false;
          this.statsFreeGroupBox.Text = "Free";
@@ -555,7 +555,7 @@
          this.statsFreeBikeSlotsTextbox.Location = new System.Drawing.Point(92, 41);
          this.statsFreeBikeSlotsTextbox.Name = "statsFreeBikeSlotsTextbox";
          this.statsFreeBikeSlotsTextbox.ReadOnly = true;
-         this.statsFreeBikeSlotsTextbox.Size = new System.Drawing.Size(118, 22);
+         this.statsFreeBikeSlotsTextbox.Size = new System.Drawing.Size(87, 22);
          this.statsFreeBikeSlotsTextbox.TabIndex = 13;
          // 
          // statsFreeCarSlotsTextbox
@@ -565,7 +565,7 @@
          this.statsFreeCarSlotsTextbox.Location = new System.Drawing.Point(92, 21);
          this.statsFreeCarSlotsTextbox.Name = "statsFreeCarSlotsTextbox";
          this.statsFreeCarSlotsTextbox.ReadOnly = true;
-         this.statsFreeCarSlotsTextbox.Size = new System.Drawing.Size(118, 22);
+         this.statsFreeCarSlotsTextbox.Size = new System.Drawing.Size(87, 22);
          this.statsFreeCarSlotsTextbox.TabIndex = 14;
          // 
          // statsFreeCarSlotsLabel
@@ -603,7 +603,7 @@
          this.statsTotalGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.statsTotalGroupBox.Location = new System.Drawing.Point(6, 28);
          this.statsTotalGroupBox.Name = "statsTotalGroupBox";
-         this.statsTotalGroupBox.Size = new System.Drawing.Size(216, 127);
+         this.statsTotalGroupBox.Size = new System.Drawing.Size(185, 127);
          this.statsTotalGroupBox.TabIndex = 9;
          this.statsTotalGroupBox.TabStop = false;
          this.statsTotalGroupBox.Text = "Total";
@@ -615,7 +615,7 @@
          this.statsTotalBikeSlotsTextbox.Location = new System.Drawing.Point(92, 101);
          this.statsTotalBikeSlotsTextbox.Name = "statsTotalBikeSlotsTextbox";
          this.statsTotalBikeSlotsTextbox.ReadOnly = true;
-         this.statsTotalBikeSlotsTextbox.Size = new System.Drawing.Size(118, 22);
+         this.statsTotalBikeSlotsTextbox.Size = new System.Drawing.Size(87, 22);
          this.statsTotalBikeSlotsTextbox.TabIndex = 11;
          // 
          // statsTotalCarSlotsTextbox
@@ -625,7 +625,7 @@
          this.statsTotalCarSlotsTextbox.Location = new System.Drawing.Point(92, 81);
          this.statsTotalCarSlotsTextbox.Name = "statsTotalCarSlotsTextbox";
          this.statsTotalCarSlotsTextbox.ReadOnly = true;
-         this.statsTotalCarSlotsTextbox.Size = new System.Drawing.Size(118, 22);
+         this.statsTotalCarSlotsTextbox.Size = new System.Drawing.Size(87, 22);
          this.statsTotalCarSlotsTextbox.TabIndex = 12;
          // 
          // statsTotalBikesTextbox
@@ -635,7 +635,7 @@
          this.statsTotalBikesTextbox.Location = new System.Drawing.Point(92, 61);
          this.statsTotalBikesTextbox.Name = "statsTotalBikesTextbox";
          this.statsTotalBikesTextbox.ReadOnly = true;
-         this.statsTotalBikesTextbox.Size = new System.Drawing.Size(118, 22);
+         this.statsTotalBikesTextbox.Size = new System.Drawing.Size(87, 22);
          this.statsTotalBikesTextbox.TabIndex = 11;
          // 
          // statsTotalCarsTextbox
@@ -645,7 +645,7 @@
          this.statsTotalCarsTextbox.Location = new System.Drawing.Point(92, 41);
          this.statsTotalCarsTextbox.Name = "statsTotalCarsTextbox";
          this.statsTotalCarsTextbox.ReadOnly = true;
-         this.statsTotalCarsTextbox.Size = new System.Drawing.Size(118, 22);
+         this.statsTotalCarsTextbox.Size = new System.Drawing.Size(87, 22);
          this.statsTotalCarsTextbox.TabIndex = 10;
          // 
          // statsTotalFloorsTextbox
@@ -655,7 +655,7 @@
          this.statsTotalFloorsTextbox.Location = new System.Drawing.Point(92, 21);
          this.statsTotalFloorsTextbox.Name = "statsTotalFloorsTextbox";
          this.statsTotalFloorsTextbox.ReadOnly = true;
-         this.statsTotalFloorsTextbox.Size = new System.Drawing.Size(118, 22);
+         this.statsTotalFloorsTextbox.Size = new System.Drawing.Size(87, 22);
          this.statsTotalFloorsTextbox.TabIndex = 9;
          // 
          // statsTotalFloorsLabel
@@ -712,15 +712,15 @@
          // 
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
          this.BackColor = System.Drawing.Color.Gray;
-         this.ClientSize = new System.Drawing.Size(1084, 629);
+         this.ClientSize = new System.Drawing.Size(1034, 629);
          this.Controls.Add(this.statsGroupBox);
          this.Controls.Add(this.driveInOutTabControl);
          this.Controls.Add(this.floorDisplayPanel);
          this.Controls.Add(this.floorCreationTabControl);
          this.Controls.Add(this.floorSelectionComboBox);
          this.Location = new System.Drawing.Point(15, 15);
-         this.MaximumSize = new System.Drawing.Size(1100, 668);
-         this.MinimumSize = new System.Drawing.Size(1100, 668);
+         this.MaximumSize = new System.Drawing.Size(1050, 668);
+         this.MinimumSize = new System.Drawing.Size(1050, 668);
          this.Name = "MainForm";
          this.RightToLeftLayout = true;
          this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
