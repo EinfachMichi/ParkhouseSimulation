@@ -59,9 +59,13 @@ namespace ParkhouseSimulation.Frontend
          RefreshParkhouseStats();
       }
 
+      private int floorEditPageComboBoxIndex;
+      
       private void FloorEditPageComboBox_DropDownClosed(object sender, EventArgs e)
       {
+         if (floorEditPageComboBoxIndex == floorEditPageComboBox.SelectedIndex) return;
          int selectedIndex = floorEditPageComboBox.SelectedIndex;
+         floorEditPageComboBoxIndex = selectedIndex;
          RefreshFloorEditPage(selectedIndex);
          UpdateFloorComboBox(selectedIndex, floorSelectionComboBox);
       }
@@ -107,9 +111,13 @@ namespace ParkhouseSimulation.Frontend
          RefreshParkhouseStats();
       }
 
+      private int floorRemoveComboBoxIndex;
+
       private void FloorRemovePageComboBox_DropDownClosed(object sender, EventArgs e)
       {
+         if (floorRemoveComboBoxIndex == floorRemovePageComboBox.SelectedIndex) return;
          int selectedIndex = floorRemovePageComboBox.SelectedIndex;
+         floorRemoveComboBoxIndex = selectedIndex;
          UpdateFloorComboBox(selectedIndex, floorSelectionComboBox);
       }
       
