@@ -413,6 +413,7 @@ namespace ParkhouseSimulation.Frontend
       {
          if(e.KeyCode == Keys.Enter)
          {
+            RefreshDriveInPage();
             DriveInButton_Click(sender, e);
          }
       }
@@ -421,6 +422,7 @@ namespace ParkhouseSimulation.Frontend
       {
          if(e.KeyCode == Keys.Enter)
          {
+            RefreshDriveInPage();
             DriveInButton_Click(sender, e);
          }
       }
@@ -429,6 +431,7 @@ namespace ParkhouseSimulation.Frontend
       {
          if(e.KeyCode == Keys.Enter)
          {
+            RefreshDriveOutPage();
             DriveOutButton_Click(sender, e);
          }
       }
@@ -437,6 +440,7 @@ namespace ParkhouseSimulation.Frontend
       {
          if(e.KeyCode == Keys.Enter)
          {
+            RefreshDriveOutPage();
             DriveOutButton_Click(sender, e);
          }
       }

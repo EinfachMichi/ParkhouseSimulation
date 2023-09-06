@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using ParkhouseSimulation.Frontend;
 
 namespace ParkhouseSimulation.Backend
@@ -95,9 +96,8 @@ namespace ParkhouseSimulation.Backend
          ParkingSlot slot = FindFreeSlotFor(type);
          if(slot != null)
          {
-            Vehicle vehicle = new Vehicle(uniqueVehicleID.ToString(), type, slot.ParkingSlotID);
+            Vehicle vehicle = new Vehicle(GenerateVehicleSignID(slot.GetHashCode()), type, slot.ParkingSlotID);
             slot.Vehicle = vehicle;
-            uniqueVehicleID++;
             return vehicle;
          }
          return null;
@@ -186,6 +186,17 @@ namespace ParkhouseSimulation.Backend
             }
          }
          return null;
+      }
+
+      private string GenerateVehicleSignID(int seed = 0)
+      {
+         string signID = "K:";
+         Random random = new Random(seed);
+         int firstRandomCharacter = random.Next(1, 26);
+         signID += ((char) ('A' + firstRandomCharacter)).ToString();
+         signID += $":{uniqueVehicleID.ToString("0000")}";
+         uniqueVehicleID++;
+         return signID;
       }
    }
 }
